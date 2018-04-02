@@ -12542,11 +12542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\web\\WebSite\\WebSite\\WebSite.csproj",
+      "projectUniqueName": "D:\\WebSite\\WebSite\\WebSite\\WebSite.csproj",
       "projectName": "WebSite",
-      "projectPath": "D:\\web\\WebSite\\WebSite\\WebSite.csproj",
+      "projectPath": "D:\\WebSite\\WebSite\\WebSite\\WebSite.csproj",
       "packagesPath": "C:\\Users\\a3.savanovich\\.nuget\\packages\\",
-      "outputPath": "D:\\web\\WebSite\\WebSite\\obj\\",
+      "outputPath": "D:\\WebSite\\WebSite\\WebSite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
