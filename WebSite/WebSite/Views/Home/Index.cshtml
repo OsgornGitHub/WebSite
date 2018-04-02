@@ -1,4 +1,5 @@
-﻿@{
+﻿@model PersonViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,5 +7,8 @@
 
 <div class="container">
     <h1>some information</h1>
+    @foreach(var name in Model.OnePersons){ 
+        <p>@name.Name</p>
+    }
 </div>
 
