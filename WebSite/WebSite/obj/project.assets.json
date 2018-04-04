@@ -2,50 +2,11 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "AngleSharp/0.9.9.2": {
+      "bootstrap/4.0.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Dynamic.Runtime": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.Linq": "4.1.0",
-          "System.Net.Primitives": "4.0.11",
-          "System.Net.Requests": "4.0.11",
-          "System.Reflection": "4.1.0",
-          "System.Reflection.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Text.Encoding": "4.0.11",
-          "System.Text.Encoding.Extensions": "4.0.11",
-          "System.Text.RegularExpressions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
-        },
-        "compile": {
-          "lib/netstandard1.0/AngleSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/AngleSharp.dll": {}
-        }
-      },
-      "CsQuery/1.3.4": {
-        "type": "package",
-        "compile": {
-          "lib/net40/CsQuery.dll": {}
-        },
-        "runtime": {
-          "lib/net40/CsQuery.dll": {}
-        }
-      },
-      "Fizzler/1.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Fizzler.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Fizzler.dll": {}
+          "jQuery": "[3.0.0, 4.0.0)",
+          "popper.js": "[1.12.9, 2.0.0)"
         }
       },
       "HtmlAgilityPack/1.7.2": {
@@ -62,6 +23,22 @@
         "runtime": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {}
         }
+      },
+      "Inflatable.Lastfm/1.0.1.307": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.1/IF.Lastfm.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/IF.Lastfm.Core.dll": {}
+        }
+      },
+      "jQuery/3.3.1": {
+        "type": "package"
       },
       "Libuv/1.10.0": {
         "type": "package",
@@ -101,6 +78,18 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "MaterialDesign.dll/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "SampleDependency": "1.0.0"
+        },
+        "compile": {
+          "lib/MaterialDesign.dll": {}
+        },
+        "runtime": {
+          "lib/MaterialDesign.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/2.4.0": {
@@ -1579,6 +1568,19 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.dll": {}
         }
       },
+      "Microsoft.CodeAnalysis.CSharp.Workspaces/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.CSharp": "[2.3.1]",
+          "Microsoft.CodeAnalysis.Workspaces.Common": "[2.3.1]"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.Workspaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.Workspaces.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.Razor/2.0.2": {
         "type": "package",
         "dependencies": {
@@ -1591,6 +1593,24 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.Workspaces.Common/2.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "[2.3.1]",
+          "System.Composition": "1.0.31",
+          "System.Diagnostics.Contracts": "4.3.0",
+          "System.Linq.Parallel": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading.Tasks.Parallel": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {
@@ -2452,6 +2472,12 @@
           "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.5": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.8.0"
+        }
+      },
       "Microsoft.Net.Http.Headers/2.0.2": {
         "type": "package",
         "dependencies": {
@@ -2696,6 +2722,110 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.BrowserLink.dll": {}
         }
       },
+      "Microsoft.VisualStudio.Web.CodeGeneration/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "2.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "2.0.3",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "2.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/dotnet-aspnet-codegenerator-design.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/dotnet-aspnet-codegenerator-design.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.Web.CodeGeneration.Core": "2.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "2.0.2",
+          "Microsoft.CodeAnalysis.CSharp": "2.3.1",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "2.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.CSharp.Workspaces": "2.3.1",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "2.0.3",
+          "Newtonsoft.Json": "10.0.1",
+          "NuGet.Frameworks": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.Web.CodeGeneration": "2.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2795,6 +2925,21 @@
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
+      },
+      "NuGet.Frameworks/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/NuGet.Frameworks.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/NuGet.Frameworks.dll": {}
+        }
+      },
+      "popper.js/1.12.9": {
+        "type": "package"
       },
       "Remotion.Linq/2.1.1": {
         "type": "package",
@@ -3035,6 +3180,12 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "SampleDependency/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "2.1.1"
         }
       },
       "SQLitePCLRaw.bundle_green/1.1.7": {
@@ -3323,6 +3474,120 @@
         },
         "runtime": {
           "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
+        }
+      },
+      "System.Composition/1.0.31": {
+        "type": "package",
+        "dependencies": {
+          "System.Composition.AttributedModel": "1.0.31",
+          "System.Composition.Convention": "1.0.31",
+          "System.Composition.Hosting": "1.0.31",
+          "System.Composition.Runtime": "1.0.31",
+          "System.Composition.TypedParts": "1.0.31"
+        }
+      },
+      "System.Composition.AttributedModel/1.0.31": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/System.Composition.AttributedModel.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Composition.AttributedModel.dll": {}
+        }
+      },
+      "System.Composition.Convention/1.0.31": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Composition.AttributedModel": "1.0.31",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tools": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/System.Composition.Convention.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Composition.Convention.dll": {}
+        }
+      },
+      "System.Composition.Hosting/1.0.31": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Composition.Runtime": "1.0.31",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tools": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/System.Composition.Hosting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Composition.Hosting.dll": {}
+        }
+      },
+      "System.Composition.Runtime/1.0.31": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tools": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/System.Composition.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Composition.Runtime.dll": {}
+        }
+      },
+      "System.Composition.TypedParts/1.0.31": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Composition.AttributedModel": "1.0.31",
+          "System.Composition.Hosting": "1.0.31",
+          "System.Composition.Runtime": "1.0.31",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tools": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -3673,6 +3938,27 @@
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
         }
       },
+      "System.Linq.Parallel/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Linq.Parallel.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Linq.Parallel.dll": {}
+        }
+      },
       "System.Linq.Queryable/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -3780,37 +4066,6 @@
           "ref/netstandard1.3/System.Net.Primitives.dll": {}
         }
       },
-      "System.Net.Requests/4.0.11": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tracing": "4.1.0",
-          "System.Globalization": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.Net.Http": "4.1.0",
-          "System.Net.Primitives": "4.0.11",
-          "System.Net.WebHeaderCollection": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Net.Requests.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.3/System.Net.Requests.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
       "System.Net.Security/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3869,21 +4124,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Net.Sockets.dll": {}
-        }
-      },
-      "System.Net.WebHeaderCollection/4.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Net.WebHeaderCollection.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Net.WebHeaderCollection.dll": {}
         }
       },
       "System.Numerics.Vectors/4.4.0": {
@@ -4878,47 +5118,33 @@
     }
   },
   "libraries": {
-    "AngleSharp/0.9.9.2": {
-      "sha512": "yIjaAylBwAuwUTIqE2lzJdM4faJWQKPDK6M8IAJT9BTcloNB46PkgTEcU9m7cBceVvFT75LIlumhz4czvhc5CQ==",
+    "bootstrap/4.0.0": {
+      "sha512": "aW3kJMmptC2GD4+hIa3x3fSrPF4VkrWQ2PRBEJg+o7lMRMi7u4UW9igY/GP02/wrIpH/CusL+mQIM42YhvA3XQ==",
       "type": "package",
-      "path": "anglesharp/0.9.9.2",
+      "path": "bootstrap/4.0.0",
       "files": [
-        "anglesharp.0.9.9.2.nupkg.sha512",
-        "anglesharp.nuspec",
-        "lib/net40/AngleSharp.dll",
-        "lib/net40/AngleSharp.xml",
-        "lib/net45/AngleSharp.dll",
-        "lib/net45/AngleSharp.xml",
-        "lib/netstandard1.0/AngleSharp.dll",
-        "lib/netstandard1.0/AngleSharp.xml",
-        "lib/portable-windows8+net45+windowsphone8+wpa+monoandroid+monotouch/AngleSharp.dll",
-        "lib/portable-windows8+net45+windowsphone8+wpa+monoandroid+monotouch/AngleSharp.xml",
-        "lib/sl50/AngleSharp.dll",
-        "lib/sl50/AngleSharp.xml"
-      ]
-    },
-    "CsQuery/1.3.4": {
-      "sha512": "JQUAwMrxt4Wg5GVxT7kKNYQTi0+gvN+DdQ60C2ZVegzvftrOpJgVobazZn+/OcReiNLIGwJhMFSn0FskgqbOUQ==",
-      "type": "package",
-      "path": "csquery/1.3.4",
-      "files": [
-        "csquery.1.3.4.nupkg.sha512",
-        "csquery.nuspec",
-        "lib/net40/CsQuery.XML",
-        "lib/net40/CsQuery.dll"
-      ]
-    },
-    "Fizzler/1.2.0": {
-      "sha512": "CPxuWF8EPvM0rwAtMTR5G+7EuLoGNXsEfqyx06upN9JyVALZ73KgbGn3SLFwGosifiUAXrvNHtXlUwGGytdECg==",
-      "type": "package",
-      "path": "fizzler/1.2.0",
-      "files": [
-        "COPYING.LESSER.txt",
-        "COPYING.txt",
-        "fizzler.1.2.0.nupkg.sha512",
-        "fizzler.nuspec",
-        "lib/netstandard1.0/Fizzler.dll",
-        "lib/netstandard2.0/Fizzler.dll"
+        "bootstrap.4.0.0.nupkg.sha512",
+        "bootstrap.nuspec",
+        "content/Content/bootstrap-grid.css",
+        "content/Content/bootstrap-grid.css.map",
+        "content/Content/bootstrap-grid.min.css",
+        "content/Content/bootstrap-grid.min.css.map",
+        "content/Content/bootstrap-reboot.css",
+        "content/Content/bootstrap-reboot.css.map",
+        "content/Content/bootstrap-reboot.min.css",
+        "content/Content/bootstrap-reboot.min.css.map",
+        "content/Content/bootstrap.css",
+        "content/Content/bootstrap.css.map",
+        "content/Content/bootstrap.min.css",
+        "content/Content/bootstrap.min.css.map",
+        "content/Scripts/bootstrap.bundle.js",
+        "content/Scripts/bootstrap.bundle.js.map",
+        "content/Scripts/bootstrap.bundle.min.js",
+        "content/Scripts/bootstrap.bundle.min.js.map",
+        "content/Scripts/bootstrap.js",
+        "content/Scripts/bootstrap.js.map",
+        "content/Scripts/bootstrap.min.js",
+        "content/Scripts/bootstrap.min.js.map"
       ]
     },
     "HtmlAgilityPack/1.7.2": {
@@ -4967,6 +5193,36 @@
         "lib/uap10.0/HtmlAgilityPack.pri"
       ]
     },
+    "Inflatable.Lastfm/1.0.1.307": {
+      "sha512": "C/f1cqNhqwno1VbxMz7AwbDyJ1MtnUVZNB7d6B/XdagGTNM2uvJxCgAYZtTHWl4LDWBmbhsqbNY6bdGXok9qvQ==",
+      "type": "package",
+      "path": "inflatable.lastfm/1.0.1.307",
+      "files": [
+        "inflatable.lastfm.1.0.1.307.nupkg.sha512",
+        "inflatable.lastfm.nuspec",
+        "lib/netstandard1.1/IF.Lastfm.Core.dll"
+      ]
+    },
+    "jQuery/3.3.1": {
+      "sha512": "tYajvLpBj04iqObTE+KDX172vu9Ifgja17CSezuBAI0nJt5CgsTcQqMX356F8S6z98VZ2k5EAesPNMvwshPhZQ==",
+      "type": "package",
+      "path": "jquery/3.3.1",
+      "files": [
+        "Content/Scripts/jquery-3.3.1-vsdoc.js",
+        "Content/Scripts/jquery-3.3.1.js",
+        "Content/Scripts/jquery-3.3.1.min.js",
+        "Content/Scripts/jquery-3.3.1.min.map",
+        "Content/Scripts/jquery-3.3.1.slim.js",
+        "Content/Scripts/jquery-3.3.1.slim.min.js",
+        "Content/Scripts/jquery-3.3.1.slim.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-3.3.1.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.3.3.1.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -4983,6 +5239,868 @@
         "runtimes/win-arm/native/libuv.dll",
         "runtimes/win-x64/native/libuv.dll",
         "runtimes/win-x86/native/libuv.dll"
+      ]
+    },
+    "MaterialDesign.dll/1.0.0": {
+      "sha512": "G/MBt2EtW/7fFqiloREkRe/GhVUg7HeGEp0gwSqZ1GCDwGDmq9dhjCRA0uzdyLwbrApA3UqMhRZ3IYHT4kSeWQ==",
+      "type": "package",
+      "path": "materialdesign.dll/1.0.0",
+      "files": [
+        "MaterialDesign.pdb",
+        "PNGICONS.zip",
+        "PNGICONS/PNGICONS.zip",
+        "PNGICONS/add-alarm-button.png",
+        "PNGICONS/add-button-inside-black-circle.png",
+        "PNGICONS/add-comment-button.png",
+        "PNGICONS/add-label-button.png",
+        "PNGICONS/add-plus-button.png",
+        "PNGICONS/add-to-queue-button.png",
+        "PNGICONS/add-user-button.png",
+        "PNGICONS/adjust-button-with-plus-and-minus.png",
+        "PNGICONS/airplane-mode-on-symbol.png",
+        "PNGICONS/android-logo-1.png",
+        "PNGICONS/android-logo.png",
+        "PNGICONS/apple-accessibility.png",
+        "PNGICONS/attachment-clip.png",
+        "PNGICONS/auto-white-balance.png",
+        "PNGICONS/automatic-brightness.png",
+        "PNGICONS/automatic-flash-symbol.png",
+        "PNGICONS/back-arrow.png",
+        "PNGICONS/backspace-arrow.png",
+        "PNGICONS/bed-quilt.png",
+        "PNGICONS/been-here-marker.png",
+        "PNGICONS/birthday-cake.png",
+        "PNGICONS/black-bubble-speech.png",
+        "PNGICONS/black-check-box-with-white-check.png",
+        "PNGICONS/black-check-box.png",
+        "PNGICONS/black-envelope-email-symbol.png",
+        "PNGICONS/black-keyboard-with-white-keys.png",
+        "PNGICONS/black-plane.png",
+        "PNGICONS/blank-check-box.png",
+        "PNGICONS/blank-frame.png",
+        "PNGICONS/blank-square.png",
+        "PNGICONS/blogger-logo.png",
+        "PNGICONS/blueetooth-logo.png",
+        "PNGICONS/bluetooth-connected.png",
+        "PNGICONS/bluetooth-disabled-button.png",
+        "PNGICONS/bluetooth-searching-signal-indicator.png",
+        "PNGICONS/bluetooth-settings.png",
+        "PNGICONS/bluetooth-signal-indicator.png",
+        "PNGICONS/bookmark-button-1.png",
+        "PNGICONS/bookmark-button.png",
+        "PNGICONS/bookmark-outline.png",
+        "PNGICONS/bookmark-ribbon.png",
+        "PNGICONS/briefcase-download-button-with-downwards-arrow.png",
+        "PNGICONS/briefcase-with-tick-inside.png",
+        "PNGICONS/brightness-control.png",
+        "PNGICONS/brochure-with-three-sections.png",
+        "PNGICONS/bubble-speech-with-three-lines.png",
+        "PNGICONS/bug-report-button.png",
+        "PNGICONS/burn-button.png",
+        "PNGICONS/button-on.png",
+        "PNGICONS/call-forwarding.png",
+        "PNGICONS/call-made-right-arrow.png",
+        "PNGICONS/call-received-arrow.png",
+        "PNGICONS/camera-diaphragm.png",
+        "PNGICONS/camera.png",
+        "PNGICONS/cancel-button.png",
+        "PNGICONS/caps-lock-button-1.png",
+        "PNGICONS/caps-lock-button.png",
+        "PNGICONS/car-changing-lanes.png",
+        "PNGICONS/car-directions.png",
+        "PNGICONS/car-front.png",
+        "PNGICONS/cell-phone-high-signal-indicator.png",
+        "PNGICONS/cell-phone-vibration.png",
+        "PNGICONS/cell-phone-with-blank-screen.png",
+        "PNGICONS/change-power-options.png",
+        "PNGICONS/chat-bubble.png",
+        "PNGICONS/chat-bubbles.png",
+        "PNGICONS/check-box.png",
+        "PNGICONS/check-symbol.png",
+        "PNGICONS/chemistry-polymer.png",
+        "PNGICONS/circle-outline.png",
+        "PNGICONS/circle-with-check-symbol.png",
+        "PNGICONS/circles-extend-button.png",
+        "PNGICONS/circumference.png",
+        "PNGICONS/city-buildings-silhouette.png",
+        "PNGICONS/clapperboard-1.png",
+        "PNGICONS/clapperboard.png",
+        "PNGICONS/clear-button.png",
+        "PNGICONS/clipboard-paste-button.png",
+        "PNGICONS/clock-with-white-face.png",
+        "PNGICONS/close-button.png",
+        "PNGICONS/closed-caption-logo.png",
+        "PNGICONS/cloud-backup-up-arrow.png",
+        "PNGICONS/cloud-done-symbol.png",
+        "PNGICONS/cloud-download.png",
+        "PNGICONS/cloud-off.png",
+        "PNGICONS/cloud-outline.png",
+        "PNGICONS/cloud-symbol-inside-a-circle.png",
+        "PNGICONS/compass-with-white-needles.png",
+        "PNGICONS/connection-indicator.png",
+        "PNGICONS/copy-content.png",
+        "PNGICONS/create-group-button.png",
+        "PNGICONS/create-new-pencil-button.png",
+        "PNGICONS/credit-card.png",
+        "PNGICONS/crop-button.png",
+        "PNGICONS/crop-tool-button.png",
+        "PNGICONS/cut-content-button.png",
+        "PNGICONS/dark-cloud.png",
+        "PNGICONS/developer-mode-for-smartphones-and-tablets.png",
+        "PNGICONS/device-connected-1.png",
+        "PNGICONS/device-connected.png",
+        "PNGICONS/disc-is-full.png",
+        "PNGICONS/do-not-disturb-rounded-sign.png",
+        "PNGICONS/double-tick-indicator.png",
+        "PNGICONS/download-button-1.png",
+        "PNGICONS/download-button.png",
+        "PNGICONS/download-to-smartphone.png",
+        "PNGICONS/downwards-arrow-key.png",
+        "PNGICONS/drafts-evelope-button.png",
+        "PNGICONS/drop-down-arrow.png",
+        "PNGICONS/drop-down-round-button.png",
+        "PNGICONS/drop-up-arrow.png",
+        "PNGICONS/earth-grid-select-language-button.png",
+        "PNGICONS/ellipsis.png",
+        "PNGICONS/email-inbox.png",
+        "PNGICONS/emoticon-with-happy-face.png",
+        "PNGICONS/end-call-button.png",
+        "PNGICONS/enter-arrow.png",
+        "PNGICONS/exit-to-app-button.png",
+        "PNGICONS/expand-arrow.png",
+        "PNGICONS/expand-button.png",
+        "PNGICONS/facebook-logo.png",
+        "PNGICONS/failed-sms.png",
+        "PNGICONS/fast-forward-button.png",
+        "PNGICONS/favorite-heart-button.png",
+        "PNGICONS/favorite-heart-outline-button.png",
+        "PNGICONS/filled-circle.png",
+        "PNGICONS/filled-cloud.png",
+        "PNGICONS/filled-speaker-with-white-details.png",
+        "PNGICONS/film-roll.png",
+        "PNGICONS/filter-results-button.png",
+        "PNGICONS/flash-off.png",
+        "PNGICONS/flash-on-indicator.png",
+        "PNGICONS/folder-symbol.png",
+        "PNGICONS/forward-arrow.png",
+        "PNGICONS/forward-right-arrow-button.png",
+        "PNGICONS/framed-portrait.png",
+        "PNGICONS/front-bus.png",
+        "PNGICONS/front-car.png",
+        "PNGICONS/front-store.png",
+        "PNGICONS/full-screen-exit.png",
+        "PNGICONS/gamepad-1.png",
+        "PNGICONS/gamepad.png",
+        "PNGICONS/get-directions-button.png",
+        "PNGICONS/gmail-logo.png",
+        "PNGICONS/go-back-left-arrow.png",
+        "PNGICONS/good-mood-emoticon.png",
+        "PNGICONS/good-wifi-signal-with-three-bars.png",
+        "PNGICONS/google-apps-script-logo.png",
+        "PNGICONS/google-cast-logo.png",
+        "PNGICONS/google-chrome-logo-filled-with-white-colour.png",
+        "PNGICONS/google-drive-document.png",
+        "PNGICONS/google-drive-file.png",
+        "PNGICONS/google-drive-folder-symbol.png",
+        "PNGICONS/google-drive-fusion-tables-logo.png",
+        "PNGICONS/google-drive-image.png",
+        "PNGICONS/google-drive-logo.png",
+        "PNGICONS/google-drive-pdf-file.png",
+        "PNGICONS/google-drive-presentation.png",
+        "PNGICONS/google-drive-spreadsheet.png",
+        "PNGICONS/google-glass-logo.png",
+        "PNGICONS/google-hangouts-logo.png",
+        "PNGICONS/google-hangouts-turn-video-off.png",
+        "PNGICONS/google-plus-logo-on-black-background.png",
+        "PNGICONS/google-plus-logo.png",
+        "PNGICONS/google-plus-party-mode.png",
+        "PNGICONS/google-symbol.png",
+        "PNGICONS/gps-fixed-indicator.png",
+        "PNGICONS/gps-location-disabled.png",
+        "PNGICONS/gps-location-symbol.png",
+        "PNGICONS/gps-off.png",
+        "PNGICONS/graduate-cap.png",
+        "PNGICONS/half-filled-rating-star.png",
+        "PNGICONS/hangouts-videocall-button.png",
+        "PNGICONS/headset-with-microphone.png",
+        "PNGICONS/headset.png",
+        "PNGICONS/help-button-speech-bubble-with-question-mark.png",
+        "PNGICONS/help-round-button.png",
+        "PNGICONS/hide-keyboard-button.png",
+        "PNGICONS/high-quality-button.png",
+        "PNGICONS/high-signal-indicator.png",
+        "PNGICONS/high-wifi-signal-indicator.png",
+        "PNGICONS/history-clock-button.png",
+        "PNGICONS/home-button.png",
+        "PNGICONS/horizontal-line-remove-button.png",
+        "PNGICONS/hotel-with-three-floors.png",
+        "PNGICONS/https-symbol.png",
+        "PNGICONS/import-export-arrows.png",
+        "PNGICONS/insert-picture-button.png",
+        "PNGICONS/instagram-logo.png",
+        "PNGICONS/invert-colors-button.png",
+        "PNGICONS/keyboard-left-arrow-button.png",
+        "PNGICONS/keyboard-right-arrow-button-1.png",
+        "PNGICONS/keyboard-right-arrow-button.png",
+        "PNGICONS/label-right-arrow-outline.png",
+        "PNGICONS/landscape-with-mountains.png",
+        "PNGICONS/laptop-outline.png",
+        "PNGICONS/left-arrow-key-1.png",
+        "PNGICONS/left-arrow-key.png",
+        "PNGICONS/left-arrow-missed-call.png",
+        "PNGICONS/light-bulb-on.png",
+        "PNGICONS/link-button.png",
+        "PNGICONS/linkedin-logo.png",
+        "PNGICONS/list-button-with-3-elements.png",
+        "PNGICONS/list-of-three-elements-on-black-background.png",
+        "PNGICONS/location-arrow.png",
+        "PNGICONS/locked-padlock-outline.png",
+        "PNGICONS/locked-padlock.png",
+        "PNGICONS/low-signal-indicator.png",
+        "PNGICONS/magic-wand-auto-fix-button.png",
+        "PNGICONS/man-cycling.png",
+        "PNGICONS/man-walking-directions-button.png",
+        "PNGICONS/map-placeholder.png",
+        "PNGICONS/map-symbol.png",
+        "PNGICONS/mark-as-favorite-star.png",
+        "PNGICONS/mark-as-unread-envelope-button.png",
+        "PNGICONS/medium-brightness-cogwheel.png",
+        "PNGICONS/medium-signal.png",
+        "PNGICONS/medium-wifi-signal-with-two-bars.png",
+        "PNGICONS/memory-chip.png",
+        "PNGICONS/menu-button.png",
+        "PNGICONS/merge-calls-arrow.png",
+        "PNGICONS/microphone-of-voice.png",
+        "PNGICONS/microphone-voice-button.png",
+        "PNGICONS/microsoft-excel-logo.png",
+        "PNGICONS/microsoft-word-logo.png",
+        "PNGICONS/missed-call-phone-receiver-with-left-arrow.png",
+        "PNGICONS/mountain-range-on-black-background.png",
+        "PNGICONS/mountain-range.png",
+        "PNGICONS/mountains-inside-a-circle.png",
+        "PNGICONS/mouse-filled-tool.png",
+        "PNGICONS/move-window.png",
+        "PNGICONS/new-tab-button.png",
+        "PNGICONS/new-tab.png",
+        "PNGICONS/nfc-near-field-communication.png",
+        "PNGICONS/notifications-bell-button.png",
+        "PNGICONS/notifications-button.png",
+        "PNGICONS/notifications-silenced.png",
+        "PNGICONS/pages-of-google-plus.png",
+        "PNGICONS/painter-palette.png",
+        "PNGICONS/panoramic-mountain-photography.png",
+        "PNGICONS/parking-sign.png",
+        "PNGICONS/pause-button.png",
+        "PNGICONS/phone-call-button.png",
+        "PNGICONS/phone-locked.png",
+        "PNGICONS/phone-paused-indicator.png",
+        "PNGICONS/phone-receiver-with-bluetooth-sign.png",
+        "PNGICONS/phone-settings.png",
+        "PNGICONS/phone-working-indicator.png",
+        "PNGICONS/photo-album.png",
+        "PNGICONS/photo-frame.png",
+        "PNGICONS/photo-library.png",
+        "PNGICONS/photographic-film-roll.png",
+        "PNGICONS/pinterest-logo.png",
+        "PNGICONS/planet-earth.png",
+        "PNGICONS/play-arrow.png",
+        "PNGICONS/play-button-inside-a-circle.png",
+        "PNGICONS/play-next-button.png",
+        "PNGICONS/play-rounded-button.png",
+        "PNGICONS/play-slideshow-button.png",
+        "PNGICONS/plus-one.png",
+        "PNGICONS/poll-symbol-on-black-square-with-rounded-corners.png",
+        "PNGICONS/power-connection-indicator.png",
+        "PNGICONS/previous-track.png",
+        "PNGICONS/printer-printing-document.png",
+        "PNGICONS/problems-with-synchronization.png",
+        "PNGICONS/progress-indicator.png",
+        "PNGICONS/public-transport-subway.png",
+        "PNGICONS/public-transport-train-directions.png",
+        "PNGICONS/puzzle-piece-plugin.png",
+        "PNGICONS/radio-on-button.png",
+        "PNGICONS/random-line.png",
+        "PNGICONS/rate-star-button.png",
+        "PNGICONS/read-more-left-arrow-button.png",
+        "PNGICONS/receipt.png",
+        "PNGICONS/record-voice-microphone-button.png",
+        "PNGICONS/refresh-button-1.png",
+        "PNGICONS/refresh-button.png",
+        "PNGICONS/reminder-bow.png",
+        "PNGICONS/replay-arrow.png",
+        "PNGICONS/reply-all-button.png",
+        "PNGICONS/report-symbol.png",
+        "PNGICONS/rewind-button.png",
+        "PNGICONS/right-arrow-forward.png",
+        "PNGICONS/ring-volume-control-button.png",
+        "PNGICONS/rotate-to-left-button.png",
+        "PNGICONS/rotate-to-right-button.png",
+        "PNGICONS/round-account-button-with-user-inside.png",
+        "PNGICONS/round-add-button.png",
+        "PNGICONS/round-data-usage-symbol.png",
+        "PNGICONS/round-delete-button.png",
+        "PNGICONS/round-error-symbol.png",
+        "PNGICONS/round-info-button.png",
+        "PNGICONS/round-pause-button.png",
+        "PNGICONS/round-remove-button.png",
+        "PNGICONS/round-rgb-button.png",
+        "PNGICONS/rounded-add-button-1.png",
+        "PNGICONS/rounded-add-button.png",
+        "PNGICONS/rounded-adjust-button-with-plus-and-minus.png",
+        "PNGICONS/rounded-block-sign.png",
+        "PNGICONS/rounded-info-button.png",
+        "PNGICONS/rounded-pause-button.png",
+        "PNGICONS/rounded-remove-button.png",
+        "PNGICONS/rubbish-bin-delete-button.png",
+        "PNGICONS/save-button.png",
+        "PNGICONS/schedule-button.png",
+        "PNGICONS/screen-locked-1.png",
+        "PNGICONS/screen-locked.png",
+        "PNGICONS/screen-rotation-button.png",
+        "PNGICONS/screen-rotation-lock-button.png",
+        "PNGICONS/screen-with-news-sections.png",
+        "PNGICONS/screen-with-rounded-corners.png",
+        "PNGICONS/sd-card-1.png",
+        "PNGICONS/sd-card.png",
+        "PNGICONS/searching-location-gps-indicator.png",
+        "PNGICONS/searching-magnifying-glass.png",
+        "PNGICONS/select-all.png",
+        "PNGICONS/select-brightness-button.png",
+        "PNGICONS/send-button.png",
+        "PNGICONS/send-to-back-button.png",
+        "PNGICONS/send-to-front-button.png",
+        "PNGICONS/server-rack-with-three-levels.png",
+        "PNGICONS/set-alarm.png",
+        "PNGICONS/set-timer-button.png",
+        "PNGICONS/settings-cogwheel-button.png",
+        "PNGICONS/settings-cogwheel-inside-black-square.png",
+        "PNGICONS/share-button.png",
+        "PNGICONS/shared-folder.png",
+        "PNGICONS/shining-rectangular-object.png",
+        "PNGICONS/shining-sun.png",
+        "PNGICONS/shopping-basket-button.png",
+        "PNGICONS/shopping-cart.png",
+        "PNGICONS/show-apps-button.png",
+        "PNGICONS/show-less-fold-button.png",
+        "PNGICONS/show-menu-button.png",
+        "PNGICONS/show-more-button-with-three-dots.png",
+        "PNGICONS/show-more-button.png",
+        "PNGICONS/shuffle-mode-arrows.png",
+        "PNGICONS/sim-card-problem.png",
+        "PNGICONS/smartphone-dock.png",
+        "PNGICONS/smartphone-with-three-buttons.png",
+        "PNGICONS/sms-bubble-speech.png",
+        "PNGICONS/sms-speech-bubble.png",
+        "PNGICONS/snake-game.png",
+        "PNGICONS/sort-button-with-three-lines.png",
+        "PNGICONS/speech-bubble-with-mountains-inside.png",
+        "PNGICONS/split-call-arrows.png",
+        "PNGICONS/square-add-button.png",
+        "PNGICONS/stop-button.png",
+        "PNGICONS/swap-horizontal-orientation-arrows.png",
+        "PNGICONS/swap-vertical-orientation-arrows.png",
+        "PNGICONS/switch-camera-button.png",
+        "PNGICONS/switch-to-full-screen-button.png",
+        "PNGICONS/switch-vertical-orientation-arrows.png",
+        "PNGICONS/switch-video-on.png",
+        "PNGICONS/synchronization-arrows.png",
+        "PNGICONS/synchronization-button-with-two-arrows.png",
+        "PNGICONS/synchronization-problem.png",
+        "PNGICONS/tab-symbol.png",
+        "PNGICONS/tablet-with-blank-screen.png",
+        "PNGICONS/tack-save-button.png",
+        "PNGICONS/tag-button-with-happy-face.png",
+        "PNGICONS/telephone-keypad-with-ten-keys.png",
+        "PNGICONS/thermostat-temperature-wheel.png",
+        "PNGICONS/three-columns-layout.png",
+        "PNGICONS/three-dots-more-indicator.png",
+        "PNGICONS/thumb-down-button.png",
+        "PNGICONS/thumb-up-button.png",
+        "PNGICONS/tick-inside-circle.png",
+        "PNGICONS/time-lapse.png",
+        "PNGICONS/traffic-light.png",
+        "PNGICONS/train-public-transport.png",
+        "PNGICONS/tumblr-logo.png",
+        "PNGICONS/turn-airplane-mode-off.png",
+        "PNGICONS/turn-microphone-off-button.png",
+        "PNGICONS/turn-notifications-off-button.png",
+        "PNGICONS/turn-notifications-on-button.png",
+        "PNGICONS/turn-synchronization-off.png",
+        "PNGICONS/turn-video-off-button.png",
+        "PNGICONS/turn-visibility-off-button.png",
+        "PNGICONS/twitter-logo-on-black-background.png",
+        "PNGICONS/two-circles-one-inside-the-other.png",
+        "PNGICONS/two-men.png",
+        "PNGICONS/two-rows-and-three-columns-layout.png",
+        "PNGICONS/underline-button.png",
+        "PNGICONS/underline-text-button.png",
+        "PNGICONS/undo-button.png",
+        "PNGICONS/unlocked-padlock.png",
+        "PNGICONS/up-arrow-key.png",
+        "PNGICONS/upload-button.png",
+        "PNGICONS/upload-to-cloud-button.png",
+        "PNGICONS/usb-symbol.png",
+        "PNGICONS/user-account-box-1.png",
+        "PNGICONS/user-account-box.png",
+        "PNGICONS/user-inside-bubble-speech.png",
+        "PNGICONS/user-outline.png",
+        "PNGICONS/user-shape.png",
+        "PNGICONS/users-social-symbol.png",
+        "PNGICONS/verification-mark.png",
+        "PNGICONS/videocall-button.png",
+        "PNGICONS/videocam-filled-tool.png",
+        "PNGICONS/view-list-button.png",
+        "PNGICONS/virtual-private-network-vpn-symbol.png",
+        "PNGICONS/visibility-button.png",
+        "PNGICONS/voice-message-microphone-button.png",
+        "PNGICONS/voicemail.png",
+        "PNGICONS/volume-down-indicator.png",
+        "PNGICONS/volume-muted.png",
+        "PNGICONS/volume-off-indicator.png",
+        "PNGICONS/volume-up-indicator.png",
+        "PNGICONS/warning-sign.png",
+        "PNGICONS/watch-with-blank-face.png",
+        "PNGICONS/waving-flag.png",
+        "PNGICONS/web-server.png",
+        "PNGICONS/website-with-different-sections.png",
+        "PNGICONS/wifi-high-signal.png",
+        "PNGICONS/wifi-low-signal-with-one-bar.png",
+        "PNGICONS/wifi-signal-waves.png",
+        "PNGICONS/window-with-different-sections.png",
+        "PNGICONS/work-briefcase.png",
+        "PNGICONS/workspace-with-two-horizontal-windows.png",
+        "PNGICONS/world-shape-public-symbol.png",
+        "PNGICONS/write-email-envelope-button.png",
+        "PNGICONS/youtube-logo.png",
+        "SVGICONS.zip",
+        "SVGICONS/SVGICONS.zip",
+        "SVGICONS/add-alarm-button.svg",
+        "SVGICONS/add-button-inside-black-circle.svg",
+        "SVGICONS/add-comment-button.svg",
+        "SVGICONS/add-label-button.svg",
+        "SVGICONS/add-plus-button.svg",
+        "SVGICONS/add-to-queue-button.svg",
+        "SVGICONS/add-user-button.svg",
+        "SVGICONS/adjust-button-with-plus-and-minus.svg",
+        "SVGICONS/airplane-mode-on-symbol.svg",
+        "SVGICONS/android-logo-1.svg",
+        "SVGICONS/android-logo.svg",
+        "SVGICONS/apple-accessibility.svg",
+        "SVGICONS/attachment-clip.svg",
+        "SVGICONS/auto-white-balance.svg",
+        "SVGICONS/automatic-brightness.svg",
+        "SVGICONS/automatic-flash-symbol.svg",
+        "SVGICONS/back-arrow.svg",
+        "SVGICONS/backspace-arrow.svg",
+        "SVGICONS/bed-quilt.svg",
+        "SVGICONS/been-here-marker.svg",
+        "SVGICONS/birthday-cake.svg",
+        "SVGICONS/black-bubble-speech.svg",
+        "SVGICONS/black-check-box-with-white-check.svg",
+        "SVGICONS/black-check-box.svg",
+        "SVGICONS/black-envelope-email-symbol.svg",
+        "SVGICONS/black-keyboard-with-white-keys.svg",
+        "SVGICONS/black-plane.svg",
+        "SVGICONS/blank-check-box.svg",
+        "SVGICONS/blank-frame.svg",
+        "SVGICONS/blank-square.svg",
+        "SVGICONS/blogger-logo.svg",
+        "SVGICONS/blueetooth-logo.svg",
+        "SVGICONS/bluetooth-connected.svg",
+        "SVGICONS/bluetooth-disabled-button.svg",
+        "SVGICONS/bluetooth-searching-signal-indicator.svg",
+        "SVGICONS/bluetooth-settings.svg",
+        "SVGICONS/bluetooth-signal-indicator.svg",
+        "SVGICONS/bookmark-button-1.svg",
+        "SVGICONS/bookmark-button.svg",
+        "SVGICONS/bookmark-outline.svg",
+        "SVGICONS/bookmark-ribbon.svg",
+        "SVGICONS/briefcase-download-button-with-downwards-arrow.svg",
+        "SVGICONS/briefcase-with-tick-inside.svg",
+        "SVGICONS/brightness-control.svg",
+        "SVGICONS/brochure-with-three-sections.svg",
+        "SVGICONS/bubble-speech-with-three-lines.svg",
+        "SVGICONS/bug-report-button.svg",
+        "SVGICONS/burn-button.svg",
+        "SVGICONS/button-on.svg",
+        "SVGICONS/call-forwarding.svg",
+        "SVGICONS/call-made-right-arrow.svg",
+        "SVGICONS/call-received-arrow.svg",
+        "SVGICONS/camera-diaphragm.svg",
+        "SVGICONS/camera.svg",
+        "SVGICONS/cancel-button.svg",
+        "SVGICONS/caps-lock-button-1.svg",
+        "SVGICONS/caps-lock-button.svg",
+        "SVGICONS/car-changing-lanes.svg",
+        "SVGICONS/car-directions.svg",
+        "SVGICONS/car-front.svg",
+        "SVGICONS/cell-phone-high-signal-indicator.svg",
+        "SVGICONS/cell-phone-vibration.svg",
+        "SVGICONS/cell-phone-with-blank-screen.svg",
+        "SVGICONS/change-power-options.svg",
+        "SVGICONS/chat-bubble.svg",
+        "SVGICONS/chat-bubbles.svg",
+        "SVGICONS/check-box.svg",
+        "SVGICONS/check-symbol.svg",
+        "SVGICONS/chemistry-polymer.svg",
+        "SVGICONS/circle-outline.svg",
+        "SVGICONS/circle-with-check-symbol.svg",
+        "SVGICONS/circles-extend-button.svg",
+        "SVGICONS/circumference.svg",
+        "SVGICONS/city-buildings-silhouette.svg",
+        "SVGICONS/clapperboard-1.svg",
+        "SVGICONS/clapperboard.svg",
+        "SVGICONS/clear-button.svg",
+        "SVGICONS/clipboard-paste-button.svg",
+        "SVGICONS/clock-with-white-face.svg",
+        "SVGICONS/close-button.svg",
+        "SVGICONS/closed-caption-logo.svg",
+        "SVGICONS/cloud-backup-up-arrow.svg",
+        "SVGICONS/cloud-done-symbol.svg",
+        "SVGICONS/cloud-download.svg",
+        "SVGICONS/cloud-off.svg",
+        "SVGICONS/cloud-outline.svg",
+        "SVGICONS/cloud-symbol-inside-a-circle.svg",
+        "SVGICONS/compass-with-white-needles.svg",
+        "SVGICONS/connection-indicator.svg",
+        "SVGICONS/copy-content.svg",
+        "SVGICONS/create-group-button.svg",
+        "SVGICONS/create-new-pencil-button.svg",
+        "SVGICONS/credit-card.svg",
+        "SVGICONS/crop-button.svg",
+        "SVGICONS/crop-tool-button.svg",
+        "SVGICONS/cut-content-button.svg",
+        "SVGICONS/dark-cloud.svg",
+        "SVGICONS/developer-mode-for-smartphones-and-tablets.svg",
+        "SVGICONS/device-connected-1.svg",
+        "SVGICONS/device-connected.svg",
+        "SVGICONS/disc-is-full.svg",
+        "SVGICONS/do-not-disturb-rounded-sign.svg",
+        "SVGICONS/double-tick-indicator.svg",
+        "SVGICONS/download-button-1.svg",
+        "SVGICONS/download-button.svg",
+        "SVGICONS/download-to-smartphone.svg",
+        "SVGICONS/downwards-arrow-key.svg",
+        "SVGICONS/drafts-evelope-button.svg",
+        "SVGICONS/drop-down-arrow.svg",
+        "SVGICONS/drop-down-round-button.svg",
+        "SVGICONS/drop-up-arrow.svg",
+        "SVGICONS/earth-grid-select-language-button.svg",
+        "SVGICONS/ellipsis.svg",
+        "SVGICONS/email-inbox.svg",
+        "SVGICONS/emoticon-with-happy-face.svg",
+        "SVGICONS/end-call-button.svg",
+        "SVGICONS/enter-arrow.svg",
+        "SVGICONS/exit-to-app-button.svg",
+        "SVGICONS/expand-arrow.svg",
+        "SVGICONS/expand-button.svg",
+        "SVGICONS/facebook-logo.svg",
+        "SVGICONS/failed-sms.svg",
+        "SVGICONS/fast-forward-button.svg",
+        "SVGICONS/favorite-heart-button.svg",
+        "SVGICONS/favorite-heart-outline-button.svg",
+        "SVGICONS/filled-circle.svg",
+        "SVGICONS/filled-cloud.svg",
+        "SVGICONS/filled-speaker-with-white-details.svg",
+        "SVGICONS/film-roll.svg",
+        "SVGICONS/filter-results-button.svg",
+        "SVGICONS/flash-off.svg",
+        "SVGICONS/flash-on-indicator.svg",
+        "SVGICONS/folder-symbol.svg",
+        "SVGICONS/forward-arrow.svg",
+        "SVGICONS/forward-right-arrow-button.svg",
+        "SVGICONS/framed-portrait.svg",
+        "SVGICONS/front-bus.svg",
+        "SVGICONS/front-car.svg",
+        "SVGICONS/front-store.svg",
+        "SVGICONS/full-screen-exit.svg",
+        "SVGICONS/gamepad-1.svg",
+        "SVGICONS/gamepad.svg",
+        "SVGICONS/get-directions-button.svg",
+        "SVGICONS/gmail-logo.svg",
+        "SVGICONS/go-back-left-arrow.svg",
+        "SVGICONS/good-mood-emoticon.svg",
+        "SVGICONS/good-wifi-signal-with-three-bars.svg",
+        "SVGICONS/google-apps-script-logo.svg",
+        "SVGICONS/google-cast-logo.svg",
+        "SVGICONS/google-chrome-logo-filled-with-white-colour.svg",
+        "SVGICONS/google-drive-document.svg",
+        "SVGICONS/google-drive-file.svg",
+        "SVGICONS/google-drive-folder-symbol.svg",
+        "SVGICONS/google-drive-fusion-tables-logo.svg",
+        "SVGICONS/google-drive-image.svg",
+        "SVGICONS/google-drive-logo.svg",
+        "SVGICONS/google-drive-pdf-file.svg",
+        "SVGICONS/google-drive-presentation.svg",
+        "SVGICONS/google-drive-spreadsheet.svg",
+        "SVGICONS/google-glass-logo.svg",
+        "SVGICONS/google-hangouts-logo.svg",
+        "SVGICONS/google-hangouts-turn-video-off.svg",
+        "SVGICONS/google-plus-logo-on-black-background.svg",
+        "SVGICONS/google-plus-logo.svg",
+        "SVGICONS/google-plus-party-mode.svg",
+        "SVGICONS/google-symbol.svg",
+        "SVGICONS/gps-fixed-indicator.svg",
+        "SVGICONS/gps-location-disabled.svg",
+        "SVGICONS/gps-location-symbol.svg",
+        "SVGICONS/gps-off.svg",
+        "SVGICONS/graduate-cap.svg",
+        "SVGICONS/half-filled-rating-star.svg",
+        "SVGICONS/hangouts-videocall-button.svg",
+        "SVGICONS/headset-with-microphone.svg",
+        "SVGICONS/headset.svg",
+        "SVGICONS/help-button-speech-bubble-with-question-mark.svg",
+        "SVGICONS/help-round-button.svg",
+        "SVGICONS/hide-keyboard-button.svg",
+        "SVGICONS/high-quality-button.svg",
+        "SVGICONS/high-signal-indicator.svg",
+        "SVGICONS/high-wifi-signal-indicator.svg",
+        "SVGICONS/history-clock-button.svg",
+        "SVGICONS/home-button.svg",
+        "SVGICONS/horizontal-line-remove-button.svg",
+        "SVGICONS/hotel-with-three-floors.svg",
+        "SVGICONS/https-symbol.svg",
+        "SVGICONS/import-export-arrows.svg",
+        "SVGICONS/insert-picture-button.svg",
+        "SVGICONS/instagram-logo.svg",
+        "SVGICONS/invert-colors-button.svg",
+        "SVGICONS/keyboard-left-arrow-button.svg",
+        "SVGICONS/keyboard-right-arrow-button-1.svg",
+        "SVGICONS/keyboard-right-arrow-button.svg",
+        "SVGICONS/label-right-arrow-outline.svg",
+        "SVGICONS/landscape-with-mountains.svg",
+        "SVGICONS/laptop-outline.svg",
+        "SVGICONS/left-arrow-key-1.svg",
+        "SVGICONS/left-arrow-key.svg",
+        "SVGICONS/left-arrow-missed-call.svg",
+        "SVGICONS/light-bulb-on.svg",
+        "SVGICONS/link-button.svg",
+        "SVGICONS/linkedin-logo.svg",
+        "SVGICONS/list-button-with-3-elements.svg",
+        "SVGICONS/list-of-three-elements-on-black-background.svg",
+        "SVGICONS/location-arrow.svg",
+        "SVGICONS/locked-padlock-outline.svg",
+        "SVGICONS/locked-padlock.svg",
+        "SVGICONS/low-signal-indicator.svg",
+        "SVGICONS/magic-wand-auto-fix-button.svg",
+        "SVGICONS/man-cycling.svg",
+        "SVGICONS/man-walking-directions-button.svg",
+        "SVGICONS/map-placeholder.svg",
+        "SVGICONS/map-symbol.svg",
+        "SVGICONS/mark-as-favorite-star.svg",
+        "SVGICONS/mark-as-unread-envelope-button.svg",
+        "SVGICONS/medium-brightness-cogwheel.svg",
+        "SVGICONS/medium-signal.svg",
+        "SVGICONS/medium-wifi-signal-with-two-bars.svg",
+        "SVGICONS/memory-chip.svg",
+        "SVGICONS/menu-button.svg",
+        "SVGICONS/merge-calls-arrow.svg",
+        "SVGICONS/microphone-of-voice.svg",
+        "SVGICONS/microphone-voice-button.svg",
+        "SVGICONS/microsoft-excel-logo.svg",
+        "SVGICONS/microsoft-word-logo.svg",
+        "SVGICONS/missed-call-phone-receiver-with-left-arrow.svg",
+        "SVGICONS/mountain-range-on-black-background.svg",
+        "SVGICONS/mountain-range.svg",
+        "SVGICONS/mountains-inside-a-circle.svg",
+        "SVGICONS/mouse-filled-tool.svg",
+        "SVGICONS/move-window.svg",
+        "SVGICONS/new-tab-button.svg",
+        "SVGICONS/new-tab.svg",
+        "SVGICONS/nfc-near-field-communication.svg",
+        "SVGICONS/notifications-bell-button.svg",
+        "SVGICONS/notifications-button.svg",
+        "SVGICONS/notifications-silenced.svg",
+        "SVGICONS/pages-of-google-plus.svg",
+        "SVGICONS/painter-palette.svg",
+        "SVGICONS/panoramic-mountain-photography.svg",
+        "SVGICONS/parking-sign.svg",
+        "SVGICONS/pause-button.svg",
+        "SVGICONS/phone-call-button.svg",
+        "SVGICONS/phone-locked.svg",
+        "SVGICONS/phone-paused-indicator.svg",
+        "SVGICONS/phone-receiver-with-bluetooth-sign.svg",
+        "SVGICONS/phone-settings.svg",
+        "SVGICONS/phone-working-indicator.svg",
+        "SVGICONS/photo-album.svg",
+        "SVGICONS/photo-frame.svg",
+        "SVGICONS/photo-library.svg",
+        "SVGICONS/photographic-film-roll.svg",
+        "SVGICONS/pinterest-logo.svg",
+        "SVGICONS/planet-earth.svg",
+        "SVGICONS/play-arrow.svg",
+        "SVGICONS/play-button-inside-a-circle.svg",
+        "SVGICONS/play-next-button.svg",
+        "SVGICONS/play-rounded-button.svg",
+        "SVGICONS/play-slideshow-button.svg",
+        "SVGICONS/plus-one.svg",
+        "SVGICONS/poll-symbol-on-black-square-with-rounded-corners.svg",
+        "SVGICONS/power-connection-indicator.svg",
+        "SVGICONS/previous-track.svg",
+        "SVGICONS/printer-printing-document.svg",
+        "SVGICONS/problems-with-synchronization.svg",
+        "SVGICONS/progress-indicator.svg",
+        "SVGICONS/public-transport-subway.svg",
+        "SVGICONS/public-transport-train-directions.svg",
+        "SVGICONS/puzzle-piece-plugin.svg",
+        "SVGICONS/radio-on-button.svg",
+        "SVGICONS/random-line.svg",
+        "SVGICONS/rate-star-button.svg",
+        "SVGICONS/read-more-left-arrow-button.svg",
+        "SVGICONS/receipt.svg",
+        "SVGICONS/record-voice-microphone-button.svg",
+        "SVGICONS/refresh-button-1.svg",
+        "SVGICONS/refresh-button.svg",
+        "SVGICONS/reminder-bow.svg",
+        "SVGICONS/replay-arrow.svg",
+        "SVGICONS/reply-all-button.svg",
+        "SVGICONS/report-symbol.svg",
+        "SVGICONS/rewind-button.svg",
+        "SVGICONS/right-arrow-forward.svg",
+        "SVGICONS/ring-volume-control-button.svg",
+        "SVGICONS/rotate-to-left-button.svg",
+        "SVGICONS/rotate-to-right-button.svg",
+        "SVGICONS/round-account-button-with-user-inside.svg",
+        "SVGICONS/round-add-button.svg",
+        "SVGICONS/round-data-usage-symbol.svg",
+        "SVGICONS/round-delete-button.svg",
+        "SVGICONS/round-error-symbol.svg",
+        "SVGICONS/round-info-button.svg",
+        "SVGICONS/round-pause-button.svg",
+        "SVGICONS/round-remove-button.svg",
+        "SVGICONS/round-rgb-button.svg",
+        "SVGICONS/rounded-add-button-1.svg",
+        "SVGICONS/rounded-add-button.svg",
+        "SVGICONS/rounded-adjust-button-with-plus-and-minus.svg",
+        "SVGICONS/rounded-block-sign.svg",
+        "SVGICONS/rounded-info-button.svg",
+        "SVGICONS/rounded-pause-button.svg",
+        "SVGICONS/rounded-remove-button.svg",
+        "SVGICONS/rubbish-bin-delete-button.svg",
+        "SVGICONS/save-button.svg",
+        "SVGICONS/schedule-button.svg",
+        "SVGICONS/screen-locked-1.svg",
+        "SVGICONS/screen-locked.svg",
+        "SVGICONS/screen-rotation-button.svg",
+        "SVGICONS/screen-rotation-lock-button.svg",
+        "SVGICONS/screen-with-news-sections.svg",
+        "SVGICONS/screen-with-rounded-corners.svg",
+        "SVGICONS/sd-card-1.svg",
+        "SVGICONS/sd-card.svg",
+        "SVGICONS/searching-location-gps-indicator.svg",
+        "SVGICONS/searching-magnifying-glass.svg",
+        "SVGICONS/select-all.svg",
+        "SVGICONS/select-brightness-button.svg",
+        "SVGICONS/send-button.svg",
+        "SVGICONS/send-to-back-button.svg",
+        "SVGICONS/send-to-front-button.svg",
+        "SVGICONS/server-rack-with-three-levels.svg",
+        "SVGICONS/set-alarm.svg",
+        "SVGICONS/set-timer-button.svg",
+        "SVGICONS/settings-cogwheel-button.svg",
+        "SVGICONS/settings-cogwheel-inside-black-square.svg",
+        "SVGICONS/share-button.svg",
+        "SVGICONS/shared-folder.svg",
+        "SVGICONS/shining-rectangular-object.svg",
+        "SVGICONS/shining-sun.svg",
+        "SVGICONS/shopping-basket-button.svg",
+        "SVGICONS/shopping-cart.svg",
+        "SVGICONS/show-apps-button.svg",
+        "SVGICONS/show-less-fold-button.svg",
+        "SVGICONS/show-menu-button.svg",
+        "SVGICONS/show-more-button-with-three-dots.svg",
+        "SVGICONS/show-more-button.svg",
+        "SVGICONS/shuffle-mode-arrows.svg",
+        "SVGICONS/sim-card-problem.svg",
+        "SVGICONS/smartphone-dock.svg",
+        "SVGICONS/smartphone-with-three-buttons.svg",
+        "SVGICONS/sms-bubble-speech.svg",
+        "SVGICONS/sms-speech-bubble.svg",
+        "SVGICONS/snake-game.svg",
+        "SVGICONS/sort-button-with-three-lines.svg",
+        "SVGICONS/speech-bubble-with-mountains-inside.svg",
+        "SVGICONS/split-call-arrows.svg",
+        "SVGICONS/square-add-button.svg",
+        "SVGICONS/stop-button.svg",
+        "SVGICONS/swap-horizontal-orientation-arrows.svg",
+        "SVGICONS/swap-vertical-orientation-arrows.svg",
+        "SVGICONS/switch-camera-button.svg",
+        "SVGICONS/switch-to-full-screen-button.svg",
+        "SVGICONS/switch-vertical-orientation-arrows.svg",
+        "SVGICONS/switch-video-on.svg",
+        "SVGICONS/synchronization-arrows.svg",
+        "SVGICONS/synchronization-button-with-two-arrows.svg",
+        "SVGICONS/synchronization-problem.svg",
+        "SVGICONS/tab-symbol.svg",
+        "SVGICONS/tablet-with-blank-screen.svg",
+        "SVGICONS/tack-save-button.svg",
+        "SVGICONS/tag-button-with-happy-face.svg",
+        "SVGICONS/telephone-keypad-with-ten-keys.svg",
+        "SVGICONS/thermostat-temperature-wheel.svg",
+        "SVGICONS/three-columns-layout.svg",
+        "SVGICONS/three-dots-more-indicator.svg",
+        "SVGICONS/thumb-down-button.svg",
+        "SVGICONS/thumb-up-button.svg",
+        "SVGICONS/tick-inside-circle.svg",
+        "SVGICONS/time-lapse.svg",
+        "SVGICONS/traffic-light.svg",
+        "SVGICONS/train-public-transport.svg",
+        "SVGICONS/tumblr-logo.svg",
+        "SVGICONS/turn-airplane-mode-off.svg",
+        "SVGICONS/turn-microphone-off-button.svg",
+        "SVGICONS/turn-notifications-off-button.svg",
+        "SVGICONS/turn-notifications-on-button.svg",
+        "SVGICONS/turn-synchronization-off.svg",
+        "SVGICONS/turn-video-off-button.svg",
+        "SVGICONS/turn-visibility-off-button.svg",
+        "SVGICONS/twitter-logo-on-black-background.svg",
+        "SVGICONS/two-circles-one-inside-the-other.svg",
+        "SVGICONS/two-men.svg",
+        "SVGICONS/two-rows-and-three-columns-layout.svg",
+        "SVGICONS/underline-button.svg",
+        "SVGICONS/underline-text-button.svg",
+        "SVGICONS/undo-button.svg",
+        "SVGICONS/unlocked-padlock.svg",
+        "SVGICONS/up-arrow-key.svg",
+        "SVGICONS/upload-button.svg",
+        "SVGICONS/upload-to-cloud-button.svg",
+        "SVGICONS/usb-symbol.svg",
+        "SVGICONS/user-account-box-1.svg",
+        "SVGICONS/user-account-box.svg",
+        "SVGICONS/user-inside-bubble-speech.svg",
+        "SVGICONS/user-outline.svg",
+        "SVGICONS/user-shape.svg",
+        "SVGICONS/users-social-symbol.svg",
+        "SVGICONS/verification-mark.svg",
+        "SVGICONS/videocall-button.svg",
+        "SVGICONS/videocam-filled-tool.svg",
+        "SVGICONS/view-list-button.svg",
+        "SVGICONS/virtual-private-network-vpn-symbol.svg",
+        "SVGICONS/visibility-button.svg",
+        "SVGICONS/voice-message-microphone-button.svg",
+        "SVGICONS/voicemail.svg",
+        "SVGICONS/volume-down-indicator.svg",
+        "SVGICONS/volume-muted.svg",
+        "SVGICONS/volume-off-indicator.svg",
+        "SVGICONS/volume-up-indicator.svg",
+        "SVGICONS/warning-sign.svg",
+        "SVGICONS/watch-with-blank-face.svg",
+        "SVGICONS/waving-flag.svg",
+        "SVGICONS/web-server.svg",
+        "SVGICONS/website-with-different-sections.svg",
+        "SVGICONS/wifi-high-signal.svg",
+        "SVGICONS/wifi-low-signal-with-one-bar.svg",
+        "SVGICONS/wifi-signal-waves.svg",
+        "SVGICONS/window-with-different-sections.svg",
+        "SVGICONS/work-briefcase.svg",
+        "SVGICONS/workspace-with-two-horizontal-windows.svg",
+        "SVGICONS/world-shape-public-symbol.svg",
+        "SVGICONS/write-email-envelope-button.svg",
+        "SVGICONS/youtube-logo.svg",
+        "lib/MaterialDesign.dll",
+        "materialdesign.dll.1.0.0.nupkg.sha512",
+        "materialdesign.dll.nuspec",
+        "nuget.exe"
       ]
     },
     "Microsoft.ApplicationInsights/2.4.0": {
@@ -6039,6 +7157,17 @@
         "microsoft.codeanalysis.csharp.nuspec"
       ]
     },
+    "Microsoft.CodeAnalysis.CSharp.Workspaces/2.3.1": {
+      "sha512": "LpK7zgRU9TQ9KOZe7vDo4DEaPj6PM6HOpvTCOpBtS7GAbwOHU2IWUgnAJvFxILXKsqJDKrM0+O6zqZhG0sBYIw==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.csharp.workspaces/2.3.1",
+      "files": [
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.Workspaces.xml",
+        "microsoft.codeanalysis.csharp.workspaces.2.3.1.nupkg.sha512",
+        "microsoft.codeanalysis.csharp.workspaces.nuspec"
+      ]
+    },
     "Microsoft.CodeAnalysis.Razor/2.0.2": {
       "sha512": "uDtaWOCEZ9+2bEYA8cmlogajruQziTqRDKEZ2zt/2BViRm/sFUovHHbmYnBp5W1cqVEPz6M8R6dA1Qqv67fhfA==",
       "type": "package",
@@ -6050,6 +7179,21 @@
         "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.xml",
         "microsoft.codeanalysis.razor.2.0.2.nupkg.sha512",
         "microsoft.codeanalysis.razor.nuspec"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Workspaces.Common/2.3.1": {
+      "sha512": "/Y9zLXlvWVvGxLyNWvLrSRRZ6c1F3L2yVwhUcmGd9un7u/TJguOyY2BEOD10uA/KBDKbA4pmnWnJFq+2n5IYPg==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.workspaces.common/2.3.1",
+      "files": [
+        "lib/net46/Microsoft.CodeAnalysis.Workspaces.Desktop.dll",
+        "lib/net46/Microsoft.CodeAnalysis.Workspaces.Desktop.xml",
+        "lib/net46/Microsoft.CodeAnalysis.Workspaces.dll",
+        "lib/net46/Microsoft.CodeAnalysis.Workspaces.xml",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.xml",
+        "microsoft.codeanalysis.workspaces.common.2.3.1.nupkg.sha512",
+        "microsoft.codeanalysis.workspaces.common.nuspec"
       ]
     },
     "Microsoft.CSharp/4.4.0": {
@@ -7144,6 +8288,17 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.5": {
+      "sha512": "NBjWsx9UwnDbyFzZHQSi79VAWLzFwB3kdmd2OMg7xvSemQoM1KK5Pu2AisyGucC22igqjlPQZiv2c82Agzlsuw==",
+      "type": "package",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.5",
+      "files": [
+        "Content/Scripts/jquery.unobtrusive-ajax.js",
+        "Content/Scripts/jquery.unobtrusive-ajax.min.js",
+        "microsoft.jquery.unobtrusive.ajax.3.2.5.nupkg.sha512",
+        "microsoft.jquery.unobtrusive.ajax.nuspec"
+      ]
+    },
     "Microsoft.Net.Http.Headers/2.0.2": {
       "sha512": "hNhJU+Sd7Ws/yrBnakUWKWMyGiDUJE5lTkJfWe5xPL8YGTiL6Es07H9CcTyaYYwVlgW06uDVN0YhhH+t4EjdCw==",
       "type": "package",
@@ -7538,6 +8693,139 @@
         "microsoft.visualstudio.web.browserlink.nuspec"
       ]
     },
+    "Microsoft.VisualStudio.Web.CodeGeneration/2.0.3": {
+      "sha512": "52tNEfLXZtB82T9Tahr6w35HNhneDCpeXvY7sFGP3hBifynZ/dKev+PQvr6VX8jMXUuWlbx/19r03SPvyZwFrA==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration/2.0.3",
+      "files": [
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.xml",
+        "microsoft.visualstudio.web.codegeneration.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.0.3": {
+      "sha512": "RC6h5TLOhRji+Ei1rEQkew254pgl3CDkv7kS9g99WXin/baxFCJvJ60kx0mP0+BImhWy2slhb1lRzzNBOXDAng==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.contracts/2.0.3",
+      "files": [
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml",
+        "microsoft.visualstudio.web.codegeneration.contracts.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.contracts.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.0.3": {
+      "sha512": "j6M7elWp16R/ck24UbxiRYrDavWFJflseIhjtpPtwXYINtwCJtjVtIHm+PZIzLxg0hwTFFBFm26wopDjGfGq0w==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.core/2.0.3",
+      "files": [
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.xml",
+        "microsoft.visualstudio.web.codegeneration.core.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.core.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.0.3": {
+      "sha512": "YlSBXfB3L3ucHa8BqfzOFOSNTvW308pSNkKBvEswSXRv7bHzl2O33KKmXUSkDqaJvFrU9rYKQY52iTSmAJWlMA==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.design/2.0.3",
+      "files": [
+        "lib/net461/dotnet-aspnet-codegenerator-design.exe",
+        "lib/net461/dotnet-aspnet-codegenerator-design.xml",
+        "lib/netcoreapp2.0/dotnet-aspnet-codegenerator-design.dll",
+        "lib/netcoreapp2.0/dotnet-aspnet-codegenerator-design.xml",
+        "microsoft.visualstudio.web.codegeneration.design.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.design.nuspec",
+        "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.exe",
+        "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.xml",
+        "runtimes/win-arm64/lib/net461/dotnet-aspnet-codegenerator-design.exe",
+        "runtimes/win-arm64/lib/net461/dotnet-aspnet-codegenerator-design.xml",
+        "runtimes/win7-x64/lib/net461/dotnet-aspnet-codegenerator-design.exe",
+        "runtimes/win7-x64/lib/net461/dotnet-aspnet-codegenerator-design.xml",
+        "runtimes/win7-x86/lib/net461/dotnet-aspnet-codegenerator-design.exe",
+        "runtimes/win7-x86/lib/net461/dotnet-aspnet-codegenerator-design.xml"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.0.3": {
+      "sha512": "1ZNc1uqCAv1bU018kJXPOkpv8kKQmncjGwiBndHcJUHQ7xihq5Qd4pFJjWet4i4+mTPX0Bore5fbLa8qA1idyA==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.0.3",
+      "files": [
+        "Templates/DbContext/NewLocalDbContext.cshtml",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml",
+        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.0.3": {
+      "sha512": "anV+hbYvJtSe1aCwqhNo/0b0M7+njZpPG/dx5pdHL6Qds8PoBi9FH+QpF9IxvWmdfgffbPwqpGH3J9Ag8JPGrg==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.templating/2.0.3",
+      "files": [
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.xml",
+        "microsoft.visualstudio.web.codegeneration.templating.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.templating.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.0.3": {
+      "sha512": "oaxS4I8mmHIsIN+FsP5XjbGEQHA2DQjzn4uHt8akJY9MlcnbPD71ta5Qez4vF6PuitKljnPFLsPTSJpXESOSXQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegeneration.utils/2.0.3",
+      "files": [
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.xml",
+        "microsoft.visualstudio.web.codegeneration.utils.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.utils.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.0.3": {
+      "sha512": "WhYNqXJQqJRUt3XaLAUsKJkZcaAWECbSQ+UBqfGFCYDdAtyUS5L361x8lleQFpan4mu6VN/Ispc3CNu24wVu+w==",
+      "type": "package",
+      "path": "microsoft.visualstudio.web.codegenerators.mvc/2.0.3",
+      "files": [
+        "Generators/ParameterDefinitions/area.json",
+        "Generators/ParameterDefinitions/controller.json",
+        "Generators/ParameterDefinitions/razorpage.json",
+        "Generators/ParameterDefinitions/view.json",
+        "Templates/ControllerGenerator/ApiControllerWIthActions.cshtml",
+        "Templates/ControllerGenerator/ApiControllerWithContext.cshtml",
+        "Templates/ControllerGenerator/ApiEmptyController.cshtml",
+        "Templates/ControllerGenerator/ControllerWithActions.cshtml",
+        "Templates/ControllerGenerator/EmptyController.cshtml",
+        "Templates/ControllerGenerator/MvcControllerWithContext.cshtml",
+        "Templates/MvcLayout/Error.cshtml",
+        "Templates/MvcLayout/_Layout.cshtml",
+        "Templates/RazorPageGenerator/Create.cshtml",
+        "Templates/RazorPageGenerator/CreatePageModel.cshtml",
+        "Templates/RazorPageGenerator/Delete.cshtml",
+        "Templates/RazorPageGenerator/DeletePageModel.cshtml",
+        "Templates/RazorPageGenerator/Details.cshtml",
+        "Templates/RazorPageGenerator/DetailsPageModel.cshtml",
+        "Templates/RazorPageGenerator/Edit.cshtml",
+        "Templates/RazorPageGenerator/EditPageModel.cshtml",
+        "Templates/RazorPageGenerator/Empty.cshtml",
+        "Templates/RazorPageGenerator/EmptyPageModel.cshtml",
+        "Templates/RazorPageGenerator/List.cshtml",
+        "Templates/RazorPageGenerator/ListPageModel.cshtml",
+        "Templates/RazorPageGenerator/_ValidationScriptsPartial.cshtml",
+        "Templates/Startup/ReadMe.cshtml",
+        "Templates/Startup/Startup.cshtml",
+        "Templates/ViewGenerator/Create.cshtml",
+        "Templates/ViewGenerator/Delete.cshtml",
+        "Templates/ViewGenerator/Details.cshtml",
+        "Templates/ViewGenerator/Edit.cshtml",
+        "Templates/ViewGenerator/Empty.cshtml",
+        "Templates/ViewGenerator/List.cshtml",
+        "Templates/ViewGenerator/_ValidationScriptsPartial.cshtml",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml",
+        "microsoft.visualstudio.web.codegenerators.mvc.2.0.3.nupkg.sha512",
+        "microsoft.visualstudio.web.codegenerators.mvc.nuspec"
+      ]
+    },
     "Microsoft.Win32.Primitives/4.3.0": {
       "sha512": "9ZQKCWxH7Ijp9BfahvL2Zyf1cJIk8XYLF6Yjzr2yi0b2cOut/HQ31qf1ThHAgCc3WiZMdnWcfJCgN82/0UunxA==",
       "type": "package",
@@ -7775,6 +9063,56 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "NuGet.Frameworks/4.0.0": {
+      "sha512": "WCkN68c8q+USG+Ot1MmBDH+9DUo5dk7UB0QDMiwCYhrH7ZoFLKFGGNzJ8C3LTR1DvB1LW9BOxKeznnZznKiCTA==",
+      "type": "package",
+      "path": "nuget.frameworks/4.0.0",
+      "files": [
+        "lib/net40-client/NuGet.Frameworks.dll",
+        "lib/net40-client/NuGet.Frameworks.xml",
+        "lib/net45/NuGet.Frameworks.dll",
+        "lib/net45/NuGet.Frameworks.xml",
+        "lib/netstandard1.3/NuGet.Frameworks.dll",
+        "lib/netstandard1.3/NuGet.Frameworks.xml",
+        "nuget.frameworks.4.0.0.nupkg.sha512",
+        "nuget.frameworks.nuspec"
+      ]
+    },
+    "popper.js/1.12.9": {
+      "sha512": "WfoI8YXFx31zr8w6AvYMmqKihR3a/wLc5wBhu41ApgBukTM8C2UHNSRFrO6485SDQ/HKoSn9yiEMgfBx1LVNNw==",
+      "type": "package",
+      "path": "popper.js/1.12.9",
+      "files": [
+        "content/Scripts/README.md",
+        "content/Scripts/esm/popper-utils.js",
+        "content/Scripts/esm/popper-utils.js.map",
+        "content/Scripts/esm/popper-utils.min.js",
+        "content/Scripts/esm/popper-utils.min.js.map",
+        "content/Scripts/esm/popper.js",
+        "content/Scripts/esm/popper.js.map",
+        "content/Scripts/esm/popper.min.js",
+        "content/Scripts/esm/popper.min.js.map",
+        "content/Scripts/index.d.ts",
+        "content/Scripts/popper-utils.js",
+        "content/Scripts/popper-utils.js.map",
+        "content/Scripts/popper-utils.min.js",
+        "content/Scripts/popper-utils.min.js.map",
+        "content/Scripts/popper.js",
+        "content/Scripts/popper.js.map",
+        "content/Scripts/popper.min.js",
+        "content/Scripts/popper.min.js.map",
+        "content/Scripts/umd/popper-utils.js",
+        "content/Scripts/umd/popper-utils.js.map",
+        "content/Scripts/umd/popper-utils.min.js",
+        "content/Scripts/umd/popper-utils.min.js.map",
+        "content/Scripts/umd/popper.js",
+        "content/Scripts/umd/popper.js.map",
+        "content/Scripts/umd/popper.min.js",
+        "content/Scripts/umd/popper.min.js.map",
+        "popper.js.1.12.9.nupkg.sha512",
+        "popper.js.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -8053,6 +9391,16 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "SampleDependency/1.0.0": {
+      "sha512": "rkrKnTI2KT/L+BaaB6/xZbDiqyQ702TxYp5adqgC/GYU7KBufnNArz/5KNetThpOeXmVEMg0VlFU+9/cKz0L4w==",
+      "type": "package",
+      "path": "sampledependency/1.0.0",
+      "files": [
+        "content/Scripts/nugetexample.js",
+        "sampledependency.1.0.0.nupkg.sha512",
+        "sampledependency.nuspec"
       ]
     },
     "SQLitePCLRaw.bundle_green/1.1.7": {
@@ -8724,6 +10072,82 @@
         "ref/xamarinwatchos10/_._",
         "system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
         "system.componentmodel.typeconverter.nuspec"
+      ]
+    },
+    "System.Composition/1.0.31": {
+      "sha512": "I+D26qpYdoklyAVUdqwUBrEIckMNjAYnuPJy/h9dsQItpQwVREkDFs4b4tkBza0kT2Yk48Lcfsv2QQ9hWsh9Iw==",
+      "type": "package",
+      "path": "system.composition/1.0.31",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "system.composition.1.0.31.nupkg.sha512",
+        "system.composition.nuspec"
+      ]
+    },
+    "System.Composition.AttributedModel/1.0.31": {
+      "sha512": "NHWhkM3ZkspmA0XJEsKdtTt1ViDYuojgSND3yHhTzwxepiwqZf+BCWuvCbjUt4fe0NxxQhUDGJ5km6sLjo9qnQ==",
+      "type": "package",
+      "path": "system.composition.attributedmodel/1.0.31",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/System.Composition.AttributedModel.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.AttributedModel.dll",
+        "system.composition.attributedmodel.1.0.31.nupkg.sha512",
+        "system.composition.attributedmodel.nuspec"
+      ]
+    },
+    "System.Composition.Convention/1.0.31": {
+      "sha512": "GLjh2Ju71k6C0qxMMtl4efHa68NmWeIUYh4fkUI8xbjQrEBvFmRwMDFcylT8/PR9SQbeeL48IkFxU/+gd0nYEQ==",
+      "type": "package",
+      "path": "system.composition.convention/1.0.31",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/System.Composition.Convention.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Convention.dll",
+        "system.composition.convention.1.0.31.nupkg.sha512",
+        "system.composition.convention.nuspec"
+      ]
+    },
+    "System.Composition.Hosting/1.0.31": {
+      "sha512": "fN1bT4RX4vUqjbgoyuJFVUizAl2mYF5VAb+bVIxIYZSSc0BdnX+yGAxcavxJuDDCQ1K+/mdpgyEFc8e9ikjvrg==",
+      "type": "package",
+      "path": "system.composition.hosting/1.0.31",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/System.Composition.Hosting.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Hosting.dll",
+        "system.composition.hosting.1.0.31.nupkg.sha512",
+        "system.composition.hosting.nuspec"
+      ]
+    },
+    "System.Composition.Runtime/1.0.31": {
+      "sha512": "0LEJN+2NVM89CE4SekDrrk5tHV5LeATltkp+9WNYrR+Huiyt0vaCqHbbHtVAjPyeLWIc8dOz/3kthRBj32wGQg==",
+      "type": "package",
+      "path": "system.composition.runtime/1.0.31",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/System.Composition.Runtime.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Runtime.dll",
+        "system.composition.runtime.1.0.31.nupkg.sha512",
+        "system.composition.runtime.nuspec"
+      ]
+    },
+    "System.Composition.TypedParts/1.0.31": {
+      "sha512": "0Zae/FtzeFgDBBuILeIbC/T9HMYbW4olAmi8XqqAGosSOWvXfiQLfARZEhiGd0LVXaYgXr0NhxiU1LldRP1fpQ==",
+      "type": "package",
+      "path": "system.composition.typedparts/1.0.31",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/System.Composition.TypedParts.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.dll",
+        "system.composition.typedparts.1.0.31.nupkg.sha512",
+        "system.composition.typedparts.nuspec"
       ]
     },
     "System.Console/4.3.0": {
@@ -9813,6 +11237,61 @@
         "system.linq.expressions.nuspec"
       ]
     },
+    "System.Linq.Parallel/4.3.0": {
+      "sha512": "td7x21K8LalpjTWCzW/nQboQIFbq9i0r+PCyBBCdLWWnm4NBcdN18vpz/G9hCpUaCIfRL+ZxJNVTywlNlB1aLQ==",
+      "type": "package",
+      "path": "system.linq.parallel/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Linq.Parallel.dll",
+        "lib/netstandard1.3/System.Linq.Parallel.dll",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Linq.Parallel.dll",
+        "ref/netcore50/System.Linq.Parallel.xml",
+        "ref/netcore50/de/System.Linq.Parallel.xml",
+        "ref/netcore50/es/System.Linq.Parallel.xml",
+        "ref/netcore50/fr/System.Linq.Parallel.xml",
+        "ref/netcore50/it/System.Linq.Parallel.xml",
+        "ref/netcore50/ja/System.Linq.Parallel.xml",
+        "ref/netcore50/ko/System.Linq.Parallel.xml",
+        "ref/netcore50/ru/System.Linq.Parallel.xml",
+        "ref/netcore50/zh-hans/System.Linq.Parallel.xml",
+        "ref/netcore50/zh-hant/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/System.Linq.Parallel.dll",
+        "ref/netstandard1.1/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/de/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/es/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/fr/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/it/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/ja/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/ko/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/ru/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/zh-hans/System.Linq.Parallel.xml",
+        "ref/netstandard1.1/zh-hant/System.Linq.Parallel.xml",
+        "ref/portable-net45+win8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.linq.parallel.4.3.0.nupkg.sha512",
+        "system.linq.parallel.nuspec"
+      ]
+    },
     "System.Linq.Queryable/4.0.1": {
       "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
@@ -10027,87 +11506,6 @@
         "system.net.primitives.nuspec"
       ]
     },
-    "System.Net.Requests/4.0.11": {
-      "sha512": "vxGt7C0cZixN+VqoSW4Yakc1Y9WknmxauDqzxgpw/FnBdz4kQNN51l4wxdXX5VY1xjqy//+G+4CvJWp1+f+y6Q==",
-      "type": "package",
-      "path": "system.net.requests/4.0.11",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/net46/_._",
-        "ref/netcore50/System.Net.Requests.dll",
-        "ref/netcore50/System.Net.Requests.xml",
-        "ref/netcore50/de/System.Net.Requests.xml",
-        "ref/netcore50/es/System.Net.Requests.xml",
-        "ref/netcore50/fr/System.Net.Requests.xml",
-        "ref/netcore50/it/System.Net.Requests.xml",
-        "ref/netcore50/ja/System.Net.Requests.xml",
-        "ref/netcore50/ko/System.Net.Requests.xml",
-        "ref/netcore50/ru/System.Net.Requests.xml",
-        "ref/netcore50/zh-hans/System.Net.Requests.xml",
-        "ref/netcore50/zh-hant/System.Net.Requests.xml",
-        "ref/netstandard1.0/System.Net.Requests.dll",
-        "ref/netstandard1.0/System.Net.Requests.xml",
-        "ref/netstandard1.0/de/System.Net.Requests.xml",
-        "ref/netstandard1.0/es/System.Net.Requests.xml",
-        "ref/netstandard1.0/fr/System.Net.Requests.xml",
-        "ref/netstandard1.0/it/System.Net.Requests.xml",
-        "ref/netstandard1.0/ja/System.Net.Requests.xml",
-        "ref/netstandard1.0/ko/System.Net.Requests.xml",
-        "ref/netstandard1.0/ru/System.Net.Requests.xml",
-        "ref/netstandard1.0/zh-hans/System.Net.Requests.xml",
-        "ref/netstandard1.0/zh-hant/System.Net.Requests.xml",
-        "ref/netstandard1.1/System.Net.Requests.dll",
-        "ref/netstandard1.1/System.Net.Requests.xml",
-        "ref/netstandard1.1/de/System.Net.Requests.xml",
-        "ref/netstandard1.1/es/System.Net.Requests.xml",
-        "ref/netstandard1.1/fr/System.Net.Requests.xml",
-        "ref/netstandard1.1/it/System.Net.Requests.xml",
-        "ref/netstandard1.1/ja/System.Net.Requests.xml",
-        "ref/netstandard1.1/ko/System.Net.Requests.xml",
-        "ref/netstandard1.1/ru/System.Net.Requests.xml",
-        "ref/netstandard1.1/zh-hans/System.Net.Requests.xml",
-        "ref/netstandard1.1/zh-hant/System.Net.Requests.xml",
-        "ref/netstandard1.3/System.Net.Requests.dll",
-        "ref/netstandard1.3/System.Net.Requests.xml",
-        "ref/netstandard1.3/de/System.Net.Requests.xml",
-        "ref/netstandard1.3/es/System.Net.Requests.xml",
-        "ref/netstandard1.3/fr/System.Net.Requests.xml",
-        "ref/netstandard1.3/it/System.Net.Requests.xml",
-        "ref/netstandard1.3/ja/System.Net.Requests.xml",
-        "ref/netstandard1.3/ko/System.Net.Requests.xml",
-        "ref/netstandard1.3/ru/System.Net.Requests.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.Requests.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.Requests.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll",
-        "runtimes/win/lib/net46/_._",
-        "runtimes/win/lib/netstandard1.3/System.Net.Requests.dll",
-        "system.net.requests.4.0.11.nupkg.sha512",
-        "system.net.requests.nuspec"
-      ]
-    },
     "System.Net.Security/4.3.0": {
       "sha512": "IgJKNfALqw7JRWp5LMQ5SWHNKvXVz094U6wNE3c1i8bOkMQvgBL+MMQuNt3xl9Qg9iWpj3lFxPZEY6XHmROjMQ==",
       "type": "package",
@@ -10182,43 +11580,6 @@
         "ref/xamarinwatchos10/_._",
         "system.net.sockets.4.3.0.nupkg.sha512",
         "system.net.sockets.nuspec"
-      ]
-    },
-    "System.Net.WebHeaderCollection/4.0.1": {
-      "sha512": "XX2TIAN+wBSAIV51BU2FvvXMdstUa8b0FBSZmDWjZdwUMmggQSifpTOZ5fNH20z9ZCg2fkV1L5SsZnpO2RQDRQ==",
-      "type": "package",
-      "path": "system.net.webheadercollection/4.0.1",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/_._",
-        "lib/netstandard1.3/System.Net.WebHeaderCollection.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/_._",
-        "ref/netstandard1.3/System.Net.WebHeaderCollection.dll",
-        "ref/netstandard1.3/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/de/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/es/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/fr/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/it/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/ja/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/ko/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/ru/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.WebHeaderCollection.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.net.webheadercollection.4.0.1.nupkg.sha512",
-        "system.net.webheadercollection.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.4.0": {
@@ -12862,12 +14223,15 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "AngleSharp >= 0.9.9.2",
-      "CsQuery >= 1.3.4",
-      "Fizzler >= 1.2.0",
       "HtmlAgilityPack >= 1.7.2",
+      "Inflatable.Lastfm >= 1.0.1.307",
+      "MaterialDesign.dll >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.6",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
+      "Microsoft.jQuery.Unobtrusive.Ajax >= 3.2.5",
+      "bootstrap >= 4.0.0",
+      "jQuery >= 3.3.1"
     ]
   },
   "packageFolders": {
@@ -12895,7 +14259,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://ci.appveyor.com/nuget/lastfm": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
@@ -12911,21 +14276,17 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "AngleSharp": {
-            "target": "Package",
-            "version": "[0.9.9.2, )"
-          },
-          "CsQuery": {
-            "target": "Package",
-            "version": "[1.3.4, )"
-          },
-          "Fizzler": {
-            "target": "Package",
-            "version": "[1.2.0, )"
-          },
           "HtmlAgilityPack": {
             "target": "Package",
             "version": "[1.7.2, )"
+          },
+          "Inflatable.Lastfm": {
+            "target": "Package",
+            "version": "[1.0.1.307, )"
+          },
+          "MaterialDesign.dll": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
@@ -12935,6 +14296,22 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          },
+          "Microsoft.jQuery.Unobtrusive.Ajax": {
+            "target": "Package",
+            "version": "[3.2.5, )"
+          },
+          "bootstrap": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "jQuery": {
+            "target": "Package",
+            "version": "[3.3.1, )"
           }
         },
         "imports": [
@@ -12950,8 +14327,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'CsQuery 1.3.4' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "CsQuery",
+      "message": "Package 'MaterialDesign.dll 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MaterialDesign.dll",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
       ]

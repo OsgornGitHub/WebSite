@@ -9,3 +9,4 @@ D:\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.AssemblyInfoInputs.ca
 D:\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.AssemblyInfo.cs
 D:\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.dll
 D:\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.pdb
+D:\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

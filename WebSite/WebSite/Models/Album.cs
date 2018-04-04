@@ -14,17 +14,5 @@ namespace WebSite.Models
         public string NameAlbum { get; set; }
         public string NamePerson { get; set; }
         public string LinkToPerson {get; set;}
-
-        private List<string> listTracks;
-
-        public List<string> GetListTracks()
-        {
-            return listTracks;
-        }
-
-        public void SetListTracks(List<string> value)
-        {
-            listTracks = value;
-        }
     }
 }

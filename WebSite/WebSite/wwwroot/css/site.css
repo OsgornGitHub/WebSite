@@ -3,33 +3,38 @@
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
+/* Wrapping element 
 /* Set some basic padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
+}*/
+
+pre {
+    font-size: 16px;
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    word-break: normal !important;
+    font-size: 12px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+
+
+.col-md-2 {
+    padding: 0px;
+    margin: 0px;
+    background-repeat: no-repeat;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+a{
+    text-decoration: none;
+    text-transform: none;
+    color: #5c5a5a;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+a:hover{
+    color: #e25151;
 }

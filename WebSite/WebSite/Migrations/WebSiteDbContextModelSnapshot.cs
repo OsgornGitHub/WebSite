@@ -53,6 +53,20 @@ namespace WebSite.Migrations
 
                     b.ToTable("Persons");
                 });
+
+            modelBuilder.Entity("WebSite.Models.Track", b =>
+                {
+                    b.Property<Guid>("ThackFk")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Link");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("ThackFk");
+
+                    b.ToTable("Tracks");
+                });
 #pragma warning restore 612, 618
         }
     }

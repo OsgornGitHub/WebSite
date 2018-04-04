@@ -9,7 +9,8 @@ namespace WebSite.Models
     public class WebSiteDbContext : DbContext
     {
         public DbSet<Album> Albums { get; set; }
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<ArtistView> Persons { get; set; }
+        public DbSet<Track> Tracks { get; set; }
 
         public WebSiteDbContext(DbContextOptions<WebSiteDbContext> options)
             : base(options)

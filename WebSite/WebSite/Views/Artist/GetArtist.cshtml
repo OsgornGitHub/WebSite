@@ -1,0 +1,50 @@
+﻿@model ArtistViewModel
+@{
+    ViewData["Title"] = "Artist";
+}
+<environment include="Development">
+    <script src="~/js/site.js"></script>
+</environment>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+
+<div class="container">
+
+</div>
+<body>
+    <main>
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1">Artist</label>
+
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2">Top Music</label>
+
+        <input id="tab3" type="radio" name="tabs">
+        <label for="tab3">Top album</label>
+
+        <input id="tab4" type="radio" name="tabs">
+
+        <label for="tab4" class="similar" type="radio" name="tabs"><a href="http://localhost:54638/Artist/GetSimilar?name=@Model.Name">Similar</a></label>
+
+        <section id="content1">
+            <h2 class="text-center">@Model.Name</h2>
+            <div class="col-md-3">
+                <img class="photo-artist" src="@Model.Photo" style="width : 90%" />
+
+            </div>
+            <div class="col-md-9">
+                <pre>@Model.Biography</pre>
+            </div>
+        </section>
+        <section id="content2"></section>
+        <section id="content3"></section>
+        <section id="content4" class="similar"></section>
+
+    </main>
+
+
+</body>
+

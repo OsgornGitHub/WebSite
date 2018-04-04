@@ -1,0 +1,16 @@
+﻿@model List<Similar>
+@{
+    ViewData["Title"] = "GetSimilar";
+}
+
+<h2>GetSimilar</h2>
+@foreach (var similar in Model)
+{
+    <a href="http://localhost:54638/Artist/GetArtist?name=@similar.Name">
+        <div class="col-md-2">
+            <img src="@similar.Photo" style="width: 100%" />
+            <h4 class="text-center">@similar.Name</h4>
+
+        </div>
+    </a>
+}
