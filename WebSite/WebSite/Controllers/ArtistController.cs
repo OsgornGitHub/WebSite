@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebSite.Models;
+using Newtonsoft.Json.Linq;
 
 namespace WebSite.Controllers
 {
@@ -15,23 +16,26 @@ namespace WebSite.Controllers
         public IActionResult GetArtist(string name)
         {
             var nameForRequest = IsValidName(name);
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=1068375741deac644574d04838a37810");
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=1068375741deac644574d04838a37810" + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            var bio = "";
-            var imageLink = "";
-            for (var i = Result.IndexOf("<content>") + 9; i < Result.IndexOf("</content>"); i++)
+            Result = Result.Replace("#", "");
+            dynamic ResultJson = JObject.Parse(Result);
+            string bio = ResultJson.artist.bio.content;
+            string photo = "";
+            foreach (dynamic dyn in ResultJson.artist.image)
             {
-                bio += Result[i];
+                if (dyn.size == "mega")
+                {
+                    photo = dyn.text;
+                    break;
+                }
             }
-            for (var i = Result.IndexOf("<image size=\"mega\">") + 19; i < Result.IndexOf("</image>\n<image size=\"\">"); i++)
-            {
-                imageLink += Result[i];
-            }
+
             ArtistViewModel artist = new ArtistViewModel()
             {
                 Name = name,
-                Photo = imageLink,
+                Photo = photo,
                 Biography = bio
             };
             ViewBag.respond = Result;
@@ -59,7 +63,7 @@ namespace WebSite.Controllers
                     }
                     else
                     {
-                    validName +=  longName[i];
+                        validName += longName[i];
                     }
 
                 }
@@ -87,37 +91,32 @@ namespace WebSite.Controllers
 
             List<Similar> listSimilar = new List<Similar>();
             var nameForRequest = IsValidName(name);
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=1068375741deac644574d04838a37810");
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=1068375741deac644574d04838a37810" + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            var stringSimilar = "";
-            for (var i = Result.IndexOf("<similar>") + 9; i < Result.IndexOf("</similar>"); i++)
+            Result = Result.Replace("#", "");
+            dynamic ResultJson = JObject.Parse(Result);
+            string nameSimilar = "";
+            string photoSimilar = "";
+            //string adr = ResultJson.artist.similar[0].artist[0].name;
+            foreach (var artist in ResultJson.artist.similar.artist)
             {
-                stringSimilar += Result[i];
-            }
-            string[] splitStringSimilar = stringSimilar.Split("<artist>");
-
-            foreach(var similar in splitStringSimilar)
-            {
-                var nameSimilar = "";
-                var photoSimilar = "";
-                if (similar == "") continue;
-                for (var i = similar.IndexOf("<name>") + 6; i < similar.IndexOf("</name>"); i++)
+                nameSimilar = artist.name;
+                foreach (dynamic dyn in artist.image)
                 {
-                    nameSimilar += similar[i];
+                    if (dyn.size == "mega")
+                    {
+                        photoSimilar = dyn.text;
+                        break;
+                    }
                 }
-                for (var i = similar.IndexOf("<image size=\"mega\">") + 19; i < similar.IndexOf("</image>\n<image size=\"\">"); i++)
-                {
-                    photoSimilar += similar[i];
-                }
-                Similar artist = new Similar
+                Similar similar = new Similar
                 {
                     Name = nameSimilar,
                     Photo = photoSimilar
                 };
-                listSimilar.Add(artist);
+                listSimilar.Add(similar);
             }
-
             return listSimilar;
         }
     }
