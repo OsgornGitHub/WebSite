@@ -8,15 +8,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebSite.Models;
 using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace WebSite.Controllers
 {
     public class ArtistController : Controller
     {
+        public IConfiguration Configuration { get; set; }
+
+        public ArtistController (IConfiguration config)
+        {
+            Configuration = config;
+        }
+
+
         public IActionResult GetArtist(string name)
         {
             var nameForRequest = IsValidName(name);
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=1068375741deac644574d04838a37810" + "&format=json");
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");
@@ -91,7 +100,7 @@ namespace WebSite.Controllers
 
             List<Similar> listSimilar = new List<Similar>();
             var nameForRequest = IsValidName(name);
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=1068375741deac644574d04838a37810" + "&format=json");
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");

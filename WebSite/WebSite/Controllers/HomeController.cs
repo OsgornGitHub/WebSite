@@ -11,10 +11,20 @@ using System.Net;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Configuration;
+
 namespace WebSite.Controllers
 {
     public class HomeController : Controller
     {
+        public IConfiguration Configuration { get; set; }
+
+        public HomeController(IConfiguration config)
+        {
+            Configuration = config;
+        }
+
+
         public IActionResult Index()
         {
             //var client = new LastfmClient("1068375741deac644574d04838a37810", "41b9c11c92392649a91830a740cc3e2f");
@@ -24,14 +34,20 @@ namespace WebSite.Controllers
             List<OnePerson> list = new List<OnePerson>();
             list = GetNextPage(1, 24);
             var model = new PersonViewModel { OnePersons = list };
-
             return View(model);
         }
+        [HttpPost]
+        public IActionResult GetJson(int page, int count)
+        {
+            var list = GetNextPage(page, count);
+            return  Json(list);
+        }
+
         [HttpGet]
         public List<OnePerson> GetNextPage(int page, int count)
         {
             List<OnePerson> list = new List<OnePerson>();
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=1068375741deac644574d04838a37810&page=" + page + "&limit=" + count + "&format=json");
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=" + Configuration["apikey"] + " &page=" + page + "&limit=" + count + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");
