@@ -16,7 +16,7 @@ namespace WebSite.Controllers
     {
         public IConfiguration Configuration { get; set; }
 
-        public ArtistController (IConfiguration config)
+        public ArtistController(IConfiguration config)
         {
             Configuration = config;
         }
@@ -51,11 +51,11 @@ namespace WebSite.Controllers
             return View(artist);
         }
 
-        public IActionResult GetSimilar(string name)
+        public JsonResult GetSimilar(string name)
         {
             List<Similar> list = new List<Similar>();
             list = GetListSimilar(name);
-            return View(list);
+            return Json(list);
         }
 
         private string IsValidName(string name)
@@ -82,10 +82,37 @@ namespace WebSite.Controllers
         }
 
 
-        public List<string> GetTopAlbum(string name)
+        public JsonResult GetTopAlbum(string name, int page, int count)
         {
-            List<string> topAlbums = new List<string>();
-            return topAlbums;
+            var nameForRequest = IsValidName(name);
+            List<Track> topAlbums = new List<Track>();
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=" + count + "&page=" + page +"&format=json");
+            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
+            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+            Result = Result.Replace("#", "");
+            var nameAlbum = "";
+            var photo = "";
+            dynamic ResultJson = JObject.Parse(Result);
+            foreach (var tr in ResultJson.topalbums.album)
+            {
+                nameAlbum = tr.name;
+                foreach (dynamic dyn in tr.image)
+                {
+                    if (dyn.size == "extralarge")
+                    {
+                        photo = dyn.text;
+                        break;
+                    }
+                }
+                Track track = new Track()
+                {
+                    ThackFk = Guid.NewGuid(),
+                    Name = nameAlbum,
+                    Link = photo
+                };
+                topAlbums.Add(track);
+            }
+            return Json(topAlbums);
         }
 
         public List<string> GetTopTracks(string name)

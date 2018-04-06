@@ -32,7 +32,9 @@ namespace WebSite.Controllers
             //var result = response.Status;
             //ViewBag.status = result;
             List<OnePerson> list = new List<OnePerson>();
-            list = GetNextPage(1, 24);
+            var page = 1;
+            var count = 24;
+            list = GetNextPage(page, count);
             var model = new PersonViewModel { OnePersons = list };
             return View(model);
         }
@@ -51,13 +53,12 @@ namespace WebSite.Controllers
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");
-            ViewBag.respond = Result;
             dynamic ResultJson = JObject.Parse(Result);
-            for (int i = 0; i < count; i++)
+            foreach(var person in ResultJson.topartists.artist)
             {
-                string name = ResultJson.topartists.artist[i].name;
+                string name = person.name;
                 string photo = "";
-                foreach (dynamic dyn in ResultJson.topartists.artist[i].image)
+                foreach (dynamic dyn in person.image)
                 {
                     if (dyn.size == "mega")
                     {
