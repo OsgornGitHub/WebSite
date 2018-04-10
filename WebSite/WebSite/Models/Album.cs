@@ -12,7 +12,7 @@ namespace WebSite.Models
         public Guid AlbumFk { get; set; }
         public string Cover { get; set; }
         public string NameAlbum { get; set; }
-        public string NamePerson { get; set; }
-        public string LinkToPerson {get; set;}
+        public string NameArtist { get; set; }
+        public List<Track> Tracks { get; set; }
     }
 }

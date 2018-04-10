@@ -9,6 +9,17 @@
           "popper.js": "[1.12.9, 2.0.0)"
         }
       },
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
       "HtmlAgilityPack/1.7.2": {
         "type": "package",
         "dependencies": {
@@ -5049,6 +5060,33 @@
         "content/Scripts/bootstrap.js.map",
         "content/Scripts/bootstrap.min.js",
         "content/Scripts/bootstrap.min.js.map"
+      ]
+    },
+    "EntityFramework/6.2.0": {
+      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "type": "package",
+      "path": "entityframework/6.2.0",
+      "files": [
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
       ]
     },
     "HtmlAgilityPack/1.7.2": {
@@ -13959,6 +13997,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "EntityFramework >= 6.2.0",
       "HtmlAgilityPack >= 1.7.2",
       "Inflatable.Lastfm >= 1.0.1.307",
       "MaterialDesign.dll >= 1.0.0",
@@ -14016,6 +14055,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "EntityFramework": {
+            "target": "Package",
+            "version": "[6.2.0, )"
+          },
           "HtmlAgilityPack": {
             "target": "Package",
             "version": "[1.7.2, )"
@@ -14067,6 +14110,16 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EntityFramework 6.2.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

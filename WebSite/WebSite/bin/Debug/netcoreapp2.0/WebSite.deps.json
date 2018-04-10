@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "371b7f3e52cd65b85a27cb7f75588bd63bc28a41"
+    "signature": "4eb1059bb9c1945e03d4abe4589604ad0e73866b"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "WebSite/1.0.0": {
         "dependencies": {
+          "EntityFramework": "6.2.0",
           "HtmlAgilityPack": "1.7.2",
           "Inflatable.Lastfm": "1.0.1.307",
           "MaterialDesign.dll": "1.0.0",
@@ -45,6 +46,16 @@
         "dependencies": {
           "jQuery": "3.3.1",
           "popper.js": "1.12.9"
+        }
+      },
+      "EntityFramework/6.2.0": {
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
         }
       },
       "HtmlAgilityPack/1.7.2": {
@@ -4257,6 +4268,13 @@
       "sha512": "sha512-aW3kJMmptC2GD4+hIa3x3fSrPF4VkrWQ2PRBEJg+o7lMRMi7u4UW9igY/GP02/wrIpH/CusL+mQIM42YhvA3XQ==",
       "path": "bootstrap/4.0.0",
       "hashPath": "bootstrap.4.0.0.nupkg.sha512"
+    },
+    "EntityFramework/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "path": "entityframework/6.2.0",
+      "hashPath": "entityframework.6.2.0.nupkg.sha512"
     },
     "HtmlAgilityPack/1.7.2": {
       "type": "package",

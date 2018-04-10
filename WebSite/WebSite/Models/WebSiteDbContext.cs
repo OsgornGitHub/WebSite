@@ -17,5 +17,6 @@ namespace WebSite.Models
             : base(options)
         {
         }
+
     }
 }

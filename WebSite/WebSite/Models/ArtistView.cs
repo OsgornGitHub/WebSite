@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace WebSite.Models
 {
-    public class ArtistViewModel
+    public class ArtistView
     {
         public string Name { get; set; }
-        public string Biography { get; set; }
         public string Photo { get; set; }
     }
 }

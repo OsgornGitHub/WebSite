@@ -1,4 +1,4 @@
-﻿var pageNum = 2;
+﻿var pageNum = 1;
 var count = 24;
 var isSimilar = false;
 console.log(pageNum);
@@ -28,7 +28,7 @@ function loadData(data) {
         for (var i = 0; i < data.length; i++) {
             var markup =
                 `
-            <a ` + similar +  ` href="http://localhost:54638/Artist/GetArtist?name=${data[i].name}">
+            <a ` + similar + ` href="http://localhost:54638/Home/GetArtist?name=${data[i].name}">
                 <div class="col-md-2">
                     <img src="${data[i].photo}" style="width: 100%" />
                     <h4 class="text-center">${data[i].name}</h4>
@@ -38,12 +38,13 @@ function loadData(data) {
             container.append(markup);
         }
     }
+    window.history.replaceState("http://localhost:54638/", "Index", "http://localhost:54638/" + pageNum);
 }
 
 function getSimilar(name) {
     $.ajax({
         type: "POST",
-        url: "/Artist/GetSimilar",
+        url: "/Home/GetSimilar",
         data: { name: name },
         dataType: "json",
         success: function (data) { loadData(data, isSimilar); }
@@ -53,16 +54,15 @@ function getSimilar(name) {
 $(document).ready(function () {
     var div = document.getElementById('page');
     console.log(pageNum);
-    if (pageNum - 1 != 0 && div!=null) {
-        div.innerHTML = (pageNum - 1) + "";
-    }
+    div.innerHTML = pageNum + "";
+
 
     $('.next').click(function () {
         isSimilar = false;
         pageNum++;
         getJson(pageNum, count);
         var div = document.getElementById('page');
-        div.innerHTML = (pageNum - 1) + "";
+        div.innerHTML = pageNum + "";
         console.log(pageNum);
     })
 
@@ -74,7 +74,7 @@ $(document).ready(function () {
             getJson(pageNum, count);
             var div = document.getElementById('page');
             if (pageNum - 1 != 0) {
-                div.innerHTML = (pageNum - 1) + "";
+                div.innerHTML = pageNum + "";
             }
             console.log(pageNum);
         }

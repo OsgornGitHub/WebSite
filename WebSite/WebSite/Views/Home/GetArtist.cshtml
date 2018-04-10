@@ -1,12 +1,8 @@
-﻿@model ArtistViewModel
+﻿@model Artist
 @{
     ViewData["Title"] = "Artist";
 }
-@*<environment include="Development">
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
-</environment>*@
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +18,7 @@
         <label for="tab1">Artist</label>
 
         <input id="tab2" type="radio" name="tabs">
-        <label for="tab2">Top Music</label>
+        <label for="tab2" class="top_tracks">Top Music</label>
 
         <input id="tab3" type="radio" name="tabs">
         <label for="tab3" class="top_albums">Top album</label>
@@ -34,9 +30,6 @@
         <button class="prev_a btn btn-default">Previous</button>
         <button id="page" class="btn btn-default"></button>
         <button class="next_a btn btn-default">Next</button>
-        <button class="12a btn btn-default">12</button>
-        <button class="24a btn btn-default">24</button>
-        <button class="36a btn btn-default">36</button>
         <input id="name_a" type="hidden" value="@Model.Name"/>
 
         <section id="content1">
@@ -49,7 +42,12 @@
                 <pre>@Model.Biography</pre>
             </div>
         </section>
-        <section id="content2"></section>
+        <section id="content2">
+
+            <div class="tracks">
+
+            </div>
+        </section>
         <section id="content3">
             <div class="albums">
 
