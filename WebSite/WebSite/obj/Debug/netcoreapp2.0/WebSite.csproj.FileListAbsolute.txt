@@ -22,3 +22,15 @@ C:\Users\ALEX\Documents\GitHub\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\W
 C:\Users\ALEX\Documents\GitHub\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.pdb
 C:\Users\ALEX\Documents\GitHub\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 D:\WebSite\WebSite\WebSite\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\WebSite - Copy\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.deps.json
+D:\WebSite - Copy\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.runtimeconfig.json
+D:\WebSite - Copy\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.runtimeconfig.dev.json
+D:\WebSite - Copy\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.dll
+D:\WebSite - Copy\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.pdb
+D:\WebSite - Copy\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.csprojResolveAssemblyReference.cache
+D:\WebSite - Copy\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.csproj.CoreCompileInputs.cache
+D:\WebSite - Copy\WebSite\WebSite\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\WebSite - Copy\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.AssemblyInfoInputs.cache
+D:\WebSite - Copy\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.AssemblyInfo.cs
+D:\WebSite - Copy\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.dll
+D:\WebSite - Copy\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.pdb

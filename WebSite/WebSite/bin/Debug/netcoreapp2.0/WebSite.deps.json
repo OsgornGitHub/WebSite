@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "4eb1059bb9c1945e03d4abe4589604ad0e73866b"
+    "signature": "6ecc8abbd8c397a3fb7a29df45c4d4e74e012b0b"
   },
   "compilationOptions": {
     "defines": [
@@ -24,7 +24,6 @@
       "WebSite/1.0.0": {
         "dependencies": {
           "EntityFramework": "6.2.0",
-          "HtmlAgilityPack": "1.7.2",
           "Inflatable.Lastfm": "1.0.1.307",
           "MaterialDesign.dll": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.6",
@@ -58,24 +57,10 @@
           "lib/net45/EntityFramework.dll": {}
         }
       },
-      "HtmlAgilityPack/1.7.2": {
-        "dependencies": {
-          "System.Net.Http": "4.3.2",
-          "System.Xml.XPath": "4.3.0",
-          "System.Xml.XPath.XmlDocument": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
-        },
-        "compile": {
-          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
-        }
-      },
       "Inflatable.Lastfm/1.0.1.307": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
-          "System.Net.Http": "4.3.2"
+          "System.Net.Http": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.1/IF.Lastfm.Core.dll": {}
@@ -1419,7 +1404,7 @@
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.7",
           "NETStandard.Library": "2.0.0",
           "Newtonsoft.Json": "11.0.2",
-          "System.Net.Http": "4.3.2"
+          "System.Net.Http": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.Azure.KeyVault.dll": {}
@@ -2285,7 +2270,7 @@
           "System.Collections.Specialized": "4.3.0",
           "System.Diagnostics.Contracts": "4.3.0",
           "System.IdentityModel.Tokens.Jwt": "5.1.4",
-          "System.Net.Http": "4.3.2"
+          "System.Net.Http": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.dll": {}
@@ -3270,7 +3255,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Net.Http/4.3.2": {
+      "System.Net.Http/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
           "System.Collections": "4.3.0",
@@ -4044,26 +4029,6 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
-      "System.Xml.XPath.XmlDocument/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XPath": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
-        }
-      },
       "WindowsAzure.Storage/8.1.4": {
         "dependencies": {
           "Microsoft.Data.OData": "5.8.2",
@@ -4275,13 +4240,6 @@
       "sha512": "sha512-ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
       "path": "entityframework/6.2.0",
       "hashPath": "entityframework.6.2.0.nupkg.sha512"
-    },
-    "HtmlAgilityPack/1.7.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-URolDiAWoVXGzU1IeG/5wu/hDZ1qgNBj0AwRXtuokSpn3KUA4SOwEm6q4YyXnz1P5iEqVCMwWbCG9b8a8QfLdw==",
-      "path": "htmlagilitypack/1.7.2",
-      "hashPath": "htmlagilitypack.1.7.2.nupkg.sha512"
     },
     "Inflatable.Lastfm/1.0.1.307": {
       "type": "package",
@@ -6012,12 +5970,12 @@
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
-    "System.Net.Http/4.3.2": {
+    "System.Net.Http/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-y7hv0o0weI0j0mvEcBOdt1F3CAADiWlcw3e54m8TfYiRmBPDIsHElx8QUPDlY4x6yWXKPGN0Z2TuXCTPgkm5WQ==",
-      "path": "system.net.http/4.3.2",
-      "hashPath": "system.net.http.4.3.2.nupkg.sha512"
+      "sha512": "sha512-sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
+      "path": "system.net.http/4.3.0",
+      "hashPath": "system.net.http.4.3.0.nupkg.sha512"
     },
     "System.Net.NameResolution/4.3.0": {
       "type": "package",
@@ -6417,13 +6375,6 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
-    },
-    "System.Xml.XPath.XmlDocument/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
-      "path": "system.xml.xpath.xmldocument/4.3.0",
-      "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "WindowsAzure.Storage/8.1.4": {
       "type": "package",

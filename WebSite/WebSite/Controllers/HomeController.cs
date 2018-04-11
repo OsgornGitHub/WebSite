@@ -69,10 +69,16 @@ namespace WebSite.Controllers
                     Name = name,
                     Photo = photo
                 };
+                if(list.Count >= count)
+                {
+                    break;
+                }
                 list.Add(artist);
             }
             return list;
         }
+
+
 
         public IActionResult GetArtist(string name)
         {
@@ -198,17 +204,63 @@ namespace WebSite.Controllers
                         break;
                     }
                 }
-                Album album = new Album()
+                if(IsValidAlbum(cover, nameAlbum))
                 {
-                    AlbumFk = Guid.NewGuid(),
-                    NameAlbum = nameAlbum,
-                    NameArtist = name,
-                    Cover = cover
-                };
-                topAlbums.Add(album);
+                    Album album = new Album()
+                    {
+                        AlbumFk = Guid.NewGuid(),
+                        NameAlbum = nameAlbum,
+                        NameArtist = name,
+                        Cover = cover
+                    };
+                    topAlbums.Add(album);
+                }
+                else topAlbums.Add(GetOneTopAlbum(name, page, count));
             }
             return Json(topAlbums);
         }
+
+
+        public bool IsValidAlbum(string cover, string name)
+        {
+            if (name == "null" || cover == "null" || cover == "" || name == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        public Album GetOneTopAlbum(string name, int page, int count)
+        {
+            var nameForRequest = IsValidName(name);
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=" + count + "&page=" + page + "&format=json");
+            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
+            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+            Result = Result.Replace("#", "");
+            var nameAlbum = "";
+            var cover = "";
+            dynamic ResultJson = JObject.Parse(Result);
+            nameAlbum = ResultJson.topalbums.album[0].name;
+            foreach (dynamic dyn in ResultJson.topalbums.album[0].image)
+            {
+                if (dyn.size == "extralarge")
+                {
+                    cover = dyn.text;
+                    break;
+                }
+            }
+
+            Album album = new Album()
+            {
+                AlbumFk = Guid.NewGuid(),
+                NameAlbum = nameAlbum,
+                NameArtist = name,
+                Cover = cover
+            };
+            return album;
+        }
+
 
         public List<Track> GetTopTracks(string name, int count = 24, int page = 1)
         {
@@ -220,7 +272,7 @@ namespace WebSite.Controllers
             Result = Result.Replace("#", "");
             dynamic ResultJson = JObject.Parse(Result);
             var nameTrack = "";
-            var link = "";
+            var cover = "";
             foreach (var music in ResultJson.toptracks.track)
             {
                 nameTrack = music.name;
@@ -228,13 +280,14 @@ namespace WebSite.Controllers
                 {
                     if (dyn.size == "extralarge")
                     {
-                        link = dyn.text;
+                        cover = dyn.text;
                         break;
                     }
                 }
                 Track track = new Track()
                 {
                     Name = nameTrack,
+                    Cover = cover
                 };
                 topTracks.Add(track);
             }
@@ -247,14 +300,14 @@ namespace WebSite.Controllers
 
             List<Similar> listSimilar = new List<Similar>();
             var nameForRequest = IsValidName(name);
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=12" + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");
             dynamic ResultJson = JObject.Parse(Result);
             string nameSimilar = "";
             string photoSimilar = "";
-            foreach (var artist in ResultJson.artist.similar.artist)
+            foreach (var artist in ResultJson.similarartists.artist)
             {
                 nameSimilar = artist.name;
                 foreach (dynamic dyn in artist.image)

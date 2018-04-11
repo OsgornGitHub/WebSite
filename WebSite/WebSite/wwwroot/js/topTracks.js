@@ -19,21 +19,15 @@ function loadTracks(data) {
     container.html('');
     if (data != -1) {
         for (var i = 0; i < data.length; i++) {
-            var markup = `
-               
-                <div">
-                     <h4 class="text-center "  style="margin-bottom: 15px">${data[i].name}</h4>
+            var markup = ` 
+                <div class="col-md-2">
+                    <img src="${data[i].cover}" style="width: 100%" />
+                    <h4 class="text-center">${data[i].name}</h4>
+                    <a><h5 class="text-center" style="cursor: pointer">Download<span  class="glyphicon glyphicon-floppy-disk"></span></h5></a>
                 </div>
-
-
-
             `;
             container.append(markup);
 
-                //<div class="col-md-2" style="height: 350px">
-
-                //    <h4 class="text-center" style="margin-bottom: 15px">${data[i].name}</h4>
-                //</div> 
         }
     }
 }

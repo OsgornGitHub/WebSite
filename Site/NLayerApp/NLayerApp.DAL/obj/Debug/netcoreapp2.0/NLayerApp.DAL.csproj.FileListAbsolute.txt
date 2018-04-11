@@ -1,9 +1,0 @@
-D:\Site\NLayerApp\NLayerApp.DAL\bin\Debug\netcoreapp2.0\NLayerApp.DAL.deps.json
-D:\Site\NLayerApp\NLayerApp.DAL\bin\Debug\netcoreapp2.0\NLayerApp.DAL.dll
-D:\Site\NLayerApp\NLayerApp.DAL\obj\Debug\netcoreapp2.0\NLayerApp.DAL.csprojResolveAssemblyReference.cache
-D:\Site\NLayerApp\NLayerApp.DAL\obj\Debug\netcoreapp2.0\NLayerApp.DAL.csproj.CoreCompileInputs.cache
-D:\Site\NLayerApp\NLayerApp.DAL\obj\Debug\netcoreapp2.0\NLayerApp.DAL.AssemblyInfoInputs.cache
-D:\Site\NLayerApp\NLayerApp.DAL\obj\Debug\netcoreapp2.0\NLayerApp.DAL.AssemblyInfo.cs
-D:\Site\NLayerApp\NLayerApp.DAL\bin\Debug\netcoreapp2.0\NLayerApp.DAL.pdb
-D:\Site\NLayerApp\NLayerApp.DAL\obj\Debug\netcoreapp2.0\NLayerApp.DAL.dll
-D:\Site\NLayerApp\NLayerApp.DAL\obj\Debug\netcoreapp2.0\NLayerApp.DAL.pdb

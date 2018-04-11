@@ -11,5 +11,7 @@ namespace WebSite.Models
         [Key]
         public Guid ThackFk { get; set; }
         public string Name { get; set; }
+        public string Link { get; set; }
+        public string Cover { get; set; }
     }
 }
