@@ -20,7 +20,7 @@ function loadAlbums(data) {
     if (data != -1) {
         for (var i = 0; i < data.length; i++) {
             var markup = `
-               <a  href="http://localhost:54638/Home/GetAlbum?nameAlbum=${data[i].nameAlbum}&nameArtist=${data[i].nameArtist}">
+               <a  href="http://172.19.0.251:45457/Home/GetAlbum?nameAlbum=${data[i].nameAlbum}&nameArtist=${data[i].nameArtist}">
                     <div class="col-md-2" style="height: 350px">
                         <img src="${data[i].cover}" style="width: 100%" />
                         <h4 class="text-center" style="margin-bottom: 15px">${data[i].nameAlbum}</h4>
@@ -38,9 +38,7 @@ $(document).ready(function () {
     console.log(name);
     var div = document.getElementById('page');
     console.log(pageAlbum);
-    if (!(pageAlbum - 1 != 0)) {
-        div.innerHTML = 1 + "";
-    }
+    div.innerHTML = 1 + "";
 
     $('.next_a').click(function () {
         console.log(name);

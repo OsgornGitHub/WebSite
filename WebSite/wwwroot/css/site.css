@@ -3,12 +3,6 @@
     padding-bottom: 20px;
 }
 
-/* Wrapping element 
-/* Set some basic padding to keep content from hitting the edges */
-/*.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}*/
 
 pre {
     font-size: 16px;
@@ -26,7 +20,6 @@ pre {
 .col-md-2 {
     padding: 0px;
     margin: 0px;
-    background-repeat: no-repeat;
 }
 
 a{
@@ -37,4 +30,12 @@ a{
 
 a:hover{
     color: #e25151;
+}
+
+.visible {
+    display: block;
+}
+
+.invis {
+    display: none;
 }

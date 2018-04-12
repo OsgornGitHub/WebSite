@@ -1,0 +1,12 @@
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.deps.json
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.runtimeconfig.json
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.runtimeconfig.dev.json
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.dll
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\bin\Debug\netcoreapp2.0\WebSite.pdb
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.csprojResolveAssemblyReference.cache
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.csproj.CoreCompileInputs.cache
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.AssemblyInfoInputs.cache
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.AssemblyInfo.cs
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.dll
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\obj\Debug\netcoreapp2.0\WebSite.pdb
+c:\users\a3.savanovich\source\repos\WebSite\WebSite\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

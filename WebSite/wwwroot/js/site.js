@@ -28,7 +28,7 @@ function loadData(data) {
         for (var i = 0; i < data.length; i++) {
             var markup =
                 `
-            <a ` + similar + ` href="http://localhost:54638/Home/GetArtist?name=${data[i].name}">
+            <a ` + similar + ` href="http://172.19.0.251:45457/Home/GetArtist?name=${data[i].name}">
                 <div class="col-md-2">
                     <img src="${data[i].photo}" style="width: 100%" />
                     <h4 class="text-center">${data[i].name}</h4>
@@ -38,7 +38,7 @@ function loadData(data) {
             container.append(markup);
         }
     }
-    window.history.replaceState("http://localhost:54638/", "Index", "http://localhost:54638/" + pageNum);
+    window.history.replaceState("http://172.19.0.251:45457/", "Index", "http://172.19.0.251:45457/" + pageNum);
 }
 
 function getSimilar(name) {
@@ -109,5 +109,15 @@ $(document).ready(function () {
         getJson(pageNum, count);
     })
 
+    $('.sim').click(function () {
+        $('.nava').addClass('visible');
+    })
 
+    $('.alb').click(function () {
+        $('.nava').addClass('visible');
+    })
+
+    $('.tr').click(function () {
+        $('.nava').addClass('visible');
+    })
 });
