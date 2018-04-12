@@ -35,7 +35,6 @@ namespace WebSite.Controllers
         }
 
 
-        [HttpPost]
         public IActionResult GetJson(int page, int count)
         {
             var list = GetNextPage(page, count);
@@ -46,12 +45,12 @@ namespace WebSite.Controllers
         public List<ArtistView> GetNextPage(int page, int count)
         {
             List<ArtistView> list = new List<ArtistView>();
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=" + Configuration["apikey"] + " &page=" + page + "&limit=" + count + "&format=json");
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=" + Configuration["apikey"] + " &page=" + page + "&limit=" + count + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");
             dynamic ResultJson = JObject.Parse(Result);
-            foreach (var person in ResultJson.topartists.artist)
+            foreach (var person in ResultJson.artists.artist)
             {
                 string name = person.name;
                 string photo = "";
@@ -81,8 +80,13 @@ namespace WebSite.Controllers
         [HttpGet]
         public IActionResult GetArtist(string name)
         {
-            List<Artist> artists = new List<Artist>();
+
             var nameForRequest = IsValidName(name);
+            //if (db.Artists.FirstOrDefault(a => a.Name == nameForRequest) != null)
+            //{
+            //    Artist art = db.Artists.FirstOrDefault(a => a.Name == name);
+            //    return View(art);
+            //}
             HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
@@ -98,7 +102,6 @@ namespace WebSite.Controllers
                     break;
                 }
             }
-
             Artist artist = new Artist()
             {
                 ArtistId = Guid.NewGuid(),
@@ -106,7 +109,7 @@ namespace WebSite.Controllers
                 Photo = photo,
                 Biography = bio
             };
-            //db.Artists.Add(artist);
+            db.Artists.Add(artist);
             return View(artist);
         }
 
@@ -115,6 +118,13 @@ namespace WebSite.Controllers
         {
             var nameArtistForRequest = IsValidName(nameArtist);
             var nameAlbumForRequest = IsValidName(nameAlbum);
+
+            //if (db.Albums.FirstOrDefault(a => a.NameAlbum == nameAlbum) != null)
+            //{
+            //    Album alb = db.Albums.FirstOrDefault(a => a.NameAlbum == nameAlbum);
+            //    return View(alb);
+            //}
+
             HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=" + nameArtistForRequest + "&album=" + nameAlbumForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
@@ -148,11 +158,11 @@ namespace WebSite.Controllers
                 Cover = image,
                 Tracks = tracks
             };
-            //db.Albums.Add(album);
+            db.Albums.Add(album);
             return View(album);
         }
 
-        [HttpGet]
+
         public JsonResult GetSimilar(string name)
         {
             List<Similar> list = new List<Similar>();
@@ -215,7 +225,7 @@ namespace WebSite.Controllers
                         NameArtist = name,
                         Cover = cover
                     };
-                    //db.Albums.Add(album);
+                    db.Albums.Add(album);
                     topAlbums.Add(album);
                 }
                 else topAlbums.Add(GetOneTopAlbum(name, page, count));
@@ -261,12 +271,11 @@ namespace WebSite.Controllers
                 NameArtist = name,
                 Cover = cover
             };
-            //db.Albums.Add(album);
+            db.Albums.Add(album);
             return album;
         }
 
 
-        [HttpGet]
         public List<Track> GetTopTracks(string name, int count = 24, int page = 1)
         {
             var nameForRequest = IsValidName(name);
@@ -289,13 +298,15 @@ namespace WebSite.Controllers
                         break;
                     }
                 }
+
+
                 Track track = new Track()
                 {
                     TrackId = Guid.NewGuid(),
                     Name = nameTrack,
                     Cover = cover
                 };
-                //db.Tracks.Add(track);
+                db.Tracks.Add(track);
                 topTracks.Add(track);
             }
             return topTracks;
@@ -304,9 +315,16 @@ namespace WebSite.Controllers
         [HttpGet]
         public List<Similar> GetListSimilar(string name)
         {
-
-            List<Similar> listSimilar = new List<Similar>();
             var nameForRequest = IsValidName(name);
+            List<Similar> listSimilar = new List<Similar>();
+            //if (db.Artists.FirstOrDefault(a => a.Name == nameForRequest).Similars != null)
+            //{
+            //    foreach (var sim in db.Artists.FirstOrDefault(a => a.Name == name).Similars)
+            //    {
+            //        listSimilar.Add(sim);
+            //        return listSimilar;
+            //    }
+            //}
             HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=12" + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
@@ -331,8 +349,8 @@ namespace WebSite.Controllers
                     Name = nameSimilar,
                     Photo = photoSimilar
                 };
-                //db.Similars.Add(similar);
                 listSimilar.Add(similar);
+                db.Similars.Add(similar);
             }
             return listSimilar;
         }

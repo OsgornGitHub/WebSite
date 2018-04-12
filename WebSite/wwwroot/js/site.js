@@ -1,10 +1,10 @@
-﻿var pageNum = 1;
+﻿var pageNum = 2;
 var count = 24;
 var isSimilar = false;
 console.log(pageNum);
 function getJson(page, count) {
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "Home/GetJson",
         data: { page: pageNum, count: count },
         dataType: "json",
@@ -28,7 +28,7 @@ function loadData(data) {
         for (var i = 0; i < data.length; i++) {
             var markup =
                 `
-            <a ` + similar + ` href="http://172.19.0.251:45457/Home/GetArtist?name=${data[i].name}">
+            <a ` + similar + ` href="http://172.19.0.251:45455/Home/GetArtist?name=${data[i].name}">
                 <div class="col-md-2">
                     <img src="${data[i].photo}" style="width: 100%" />
                     <h4 class="text-center">${data[i].name}</h4>
@@ -38,7 +38,7 @@ function loadData(data) {
             container.append(markup);
         }
     }
-    window.history.replaceState("http://172.19.0.251:45457/", "Index", "http://172.19.0.251:45457/" + pageNum);
+    window.history.pushState("http://172.19.0.251:45455/", "Index", "http://172.19.0.251:45455/#" + pageNum);
 }
 
 function getSimilar(name) {
@@ -54,7 +54,7 @@ function getSimilar(name) {
 $(document).ready(function () {
     var div = document.getElementById('page');
     console.log(pageNum);
-    div.innerHTML = pageNum + "";
+    div.innerHTML = pageNum - 1  + "";
 
 
     $('.next').click(function () {
@@ -62,7 +62,7 @@ $(document).ready(function () {
         pageNum++;
         getJson(pageNum, count);
         var div = document.getElementById('page');
-        div.innerHTML = pageNum + "";
+        div.innerHTML = pageNum - 1 + "";
         console.log(pageNum);
     })
 
@@ -73,9 +73,8 @@ $(document).ready(function () {
             pageNum--;
             getJson(pageNum, count);
             var div = document.getElementById('page');
-            if (pageNum - 1 != 0) {
-                div.innerHTML = pageNum + "";
-            }
+                div.innerHTML = pageNum  + "";
+
             console.log(pageNum);
         }
     })
@@ -93,6 +92,7 @@ $(document).ready(function () {
         pageNum = 1;
         count = 12;
         getJson(pageNum, count);
+        div.innerHTML = pageNum + "";
     })
 
     $('.24').click(function () {
@@ -100,6 +100,7 @@ $(document).ready(function () {
         pageNum = 1;
         count = 24;
         getJson(pageNum, count);
+        div.innerHTML = pageNum + "";
     })
 
     $('.36').click(function () {
@@ -107,6 +108,7 @@ $(document).ready(function () {
         pageNum = 1;
         count = 36;
         getJson(pageNum, count);
+        div.innerHTML = pageNum + "";
     })
 
     $('.sim').click(function () {

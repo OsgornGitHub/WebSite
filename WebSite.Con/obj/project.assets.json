@@ -287,7 +287,7 @@
           "lib/netcoreapp2.0/_._": {}
         },
         "build": {
-          "build/netcoreapp2.0/Microsoft.AspNetCore.All.targets": {}
+          "build/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/2.0.2": {
@@ -1061,7 +1061,7 @@
           "Microsoft.AspNetCore.Mvc.RazorPages": "2.0.3"
         },
         "build": {
-          "build/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation.targets": {}
+          "build/netstandard2.0/_._": {}
         }
       },
       "Microsoft.AspNetCore.Mvc.RazorPages/2.0.3": {
@@ -1963,7 +1963,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.targets": {}
+          "build/netstandard2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration.Xml/2.0.1": {
@@ -4673,6 +4673,24 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
+        }
+      },
+      "WebSite/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Microsoft.AspNetCore.All": "2.0.6",
+          "Microsoft.NETCore.App": "2.0.0",
+          "Newtonsoft.Json": "11.0.2",
+          "bootstrap": "4.1.0",
+          "jQuery": "3.3.1"
+        },
+        "compile": {
+          "bin/placeholder/WebSite.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebSite.dll": {}
         }
       }
     }
@@ -12398,16 +12416,18 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "WebSite/1.0.0": {
+      "type": "project",
+      "path": "../WebSite/WebSite.csproj",
+      "msbuildProject": "../WebSite/WebSite.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "EntityFramework >= 6.2.0",
-      "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Newtonsoft.Json >= 11.0.2",
-      "bootstrap >= 4.1.0",
-      "jQuery >= 3.3.1"
+      "WebSite >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12418,11 +12438,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WebSite\\WebSite\\WebSite.csproj",
-      "projectName": "WebSite",
-      "projectPath": "D:\\WebSite\\WebSite\\WebSite.csproj",
+      "projectUniqueName": "D:\\WebSite\\WebSite.Con\\WebSite.Con.csproj",
+      "projectName": "WebSite.Con",
+      "projectPath": "D:\\WebSite\\WebSite.Con\\WebSite.Con.csproj",
       "packagesPath": "C:\\Users\\a3.savanovich\\.nuget\\packages\\",
-      "outputPath": "D:\\WebSite\\WebSite\\obj\\",
+      "outputPath": "D:\\WebSite\\WebSite.Con\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -12443,7 +12463,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\WebSite\\WebSite\\WebSite.csproj": {
+              "projectPath": "D:\\WebSite\\WebSite\\WebSite.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -12459,26 +12483,10 @@
             "target": "Package",
             "version": "[6.2.0, )"
           },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "[2.0.6, )"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
-          },
-          "Newtonsoft.Json": {
-            "target": "Package",
-            "version": "[11.0.2, )"
-          },
-          "bootstrap": {
-            "target": "Package",
-            "version": "[4.1.0, )"
-          },
-          "jQuery": {
-            "target": "Package",
-            "version": "[3.3.1, )"
           }
         },
         "imports": [

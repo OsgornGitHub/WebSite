@@ -5,7 +5,7 @@ var countAlbum;
 
 function getAlbums(name, pageAlbum, countAlbum) {
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "/Home/GetTopAlbum",
         data: { name: name, page: pageAlbum, count: countAlbum },
         dataType: "json",
@@ -20,7 +20,7 @@ function loadAlbums(data) {
     if (data != -1) {
         for (var i = 0; i < data.length; i++) {
             var markup = `
-               <a  href="http://172.19.0.251:45457/Home/GetAlbum?nameAlbum=${data[i].nameAlbum}&nameArtist=${data[i].nameArtist}">
+               <a  href="http://172.19.0.251:45455/Home/GetAlbum?nameAlbum=${data[i].nameAlbum}&nameArtist=${data[i].nameArtist}">
                     <div class="col-md-2" style="height: 350px">
                         <img src="${data[i].cover}" style="width: 100%" />
                         <h4 class="text-center" style="margin-bottom: 15px">${data[i].nameAlbum}</h4>
