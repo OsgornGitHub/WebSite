@@ -15,14 +15,15 @@
         <button class="36 btn btn-default">36</button>
     </div>
     @*<div style="margin-left: 45%">
-        <button class="previous btn btn-default">Previous</button>
-        <button id="page" class="btn btn-default"></button>
-        <button class="next btn btn-default">Next</button>
-    </div>*@
+            <button class="previous btn btn-default">Previous</button>
+            <button id="page" class="btn btn-default"></button>
+            <button class="next btn btn-default">Next</button>
+        </div>*@
 
     <div class="artist">
         @foreach (var person in Model)
         {
+            // TODO: ссылки должны быть относительные
             <a href="http://172.19.0.251:45455/Home/GetArtist?name=@person.Name">
                 <div class="col-md-2">
                     <img src="@person.Photo" style="width: 100%" />
@@ -33,6 +34,7 @@
 
         }
     </div>
+    @*// TODO: Нету селектора нужной страницы*@
     <div style="margin-left: 45%; margin-bottom: 30px; margin-top: 25px">
         <button class="previous btn btn-default">Previous</button>
         <button id="page" class="btn btn-default"></button>

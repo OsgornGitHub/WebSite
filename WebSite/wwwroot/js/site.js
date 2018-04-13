@@ -2,6 +2,7 @@
 var count = 24;
 var isSimilar = false;
 console.log(pageNum);
+// TODO: Это можно реализовывать средствами MVC, будет чище и понятнее
 function getJson(page, count) {
     $.ajax({
         type: "GET",
@@ -86,7 +87,7 @@ $(document).ready(function () {
         console.log(name);
     })
 
-
+    // TODO: Неочевидное название класса, а следовательно и непонятно, куда вещается этот обработчик
     $('.12').click(function () {
         isSimilar = false;
         pageNum = 1;

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebSite.Models.ViewModels
 {
+    // TODO: Как ты используешь эту модель?
     public class AlbumViewModel
     {
         public string NameAlbum { get; set; }

@@ -28,13 +28,14 @@ namespace WebSite.Controllers
         public IActionResult Index()
         {
             List<ArtistView> list = new List<ArtistView>();
+            // TODO: Лучше принимать эти переменные как параметры, чтобы была доступна прямая навигация на нужную страницу.
             var page = 1;
             var count = 24;
             list = GetNextPage(page, count);
             return View(list);
         }
 
-
+        // TODO: Название метода совершенно не говорит о том, что он делает.
         public IActionResult GetJson(int page, int count)
         {
             var list = GetNextPage(page, count);
@@ -45,11 +46,15 @@ namespace WebSite.Controllers
         public List<ArtistView> GetNextPage(int page, int count)
         {
             List<ArtistView> list = new List<ArtistView>();
+            // TODO: Тут у тебя явное дублирование кода, которое ты используешь при каждом обращении к Ласт.ФМ. Правильно выносить это в один общий класс и метод, который будет уметь конструировать запросы.
             HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=" + Configuration["apikey"] + " &page=" + page + "&limit=" + count + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
+            // TODO: Переменные именуются с маленькой буквы
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");
+            // TODO: Лучше не использовать dynamic где это возможно, потому что тогда ты теряешь преимущества статической типизации. Есть метод JsonConvert.DeserializeObject, лучше использовать его.
             dynamic ResultJson = JObject.Parse(Result);
+            // TODO: Такая обработка - это что-то, что должно быть скрыто в недрах твоего СДК и никак не должно касаться контроллера.
             foreach (var person in ResultJson.artists.artist)
             {
                 string name = person.name;
@@ -82,16 +87,19 @@ namespace WebSite.Controllers
         {
 
             var nameForRequest = IsValidName(name);
+            // TODO: В гите не нужно хранить закомментированные строки кода
             //if (db.Artists.FirstOrDefault(a => a.Name == nameForRequest) != null)
             //{
             //    Artist art = db.Artists.FirstOrDefault(a => a.Name == name);
             //    return View(art);
             //}
+            // TODO: Дублирование куска кода (за исключением части адреса и части параметров)
             HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
             HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
             string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
             Result = Result.Replace("#", "");
             dynamic ResultJson = JObject.Parse(Result);
+            // TODO: Маппинг модели вручную, еще и прямо в контроллере. Это должно выноситься в уровень СДК иил сервисов.
             string bio = ResultJson.artist.bio.content;
             string photo = "";
             foreach (dynamic dyn in ResultJson.artist.image)
@@ -109,6 +117,7 @@ namespace WebSite.Controllers
                 Photo = photo,
                 Biography = bio
             };
+            // TODO: Сохранение в базу не должно происходить на уровне контроллеров. 
             db.Artists.Add(artist);
             return View(artist);
         }
@@ -169,7 +178,9 @@ namespace WebSite.Controllers
             list = GetListSimilar(name);
             return Json(list);
         }
-
+        // TODO: Название метода говорит о том, что метод проверяет, валидное ли имя и любой разработчик будет ожидать, что в ответ вернется bool.
+        // TODO: Метод делает операции, которые от него не ожидают (исходя из имени) - преобразование строки. 
+        // TODO: А для чего вообще этот метод? Это велосипед вместо String.Replace(" ", "+")?
         private string IsValidName(string name)
         {
             var validName = "";
@@ -228,6 +239,7 @@ namespace WebSite.Controllers
                     db.Albums.Add(album);
                     topAlbums.Add(album);
                 }
+                // TODO: А как это условие должно работать? Выглядит так, что если имя альбома было пустое, ты возьмешь первый альбом еще раз.
                 else topAlbums.Add(GetOneTopAlbum(name, page, count));
             }
             return Json(topAlbums);
@@ -243,6 +255,7 @@ namespace WebSite.Controllers
             return true;
         }
 
+        // TODO: А для чего этот метод (который практически копия метода GetTopAlbum?
         [HttpGet]
         public Album GetOneTopAlbum(string name, int page, int count)
         {
