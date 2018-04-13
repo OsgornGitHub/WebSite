@@ -1,0 +1,14 @@
+D:\WebSite\WEB.ConsoleApp\bin\Debug\netcoreapp2.0\WEB.ConsoleApp.deps.json
+D:\WebSite\WEB.ConsoleApp\bin\Debug\netcoreapp2.0\WEB.ConsoleApp.runtimeconfig.json
+D:\WebSite\WEB.ConsoleApp\bin\Debug\netcoreapp2.0\WEB.ConsoleApp.runtimeconfig.dev.json
+D:\WebSite\WEB.ConsoleApp\bin\Debug\netcoreapp2.0\WEB.ConsoleApp.dll
+D:\WebSite\WEB.ConsoleApp\bin\Debug\netcoreapp2.0\WEB.dll
+D:\WebSite\WEB.ConsoleApp\bin\Debug\netcoreapp2.0\WEB.pdb
+D:\WebSite\WEB.ConsoleApp\obj\Debug\netcoreapp2.0\WEB.ConsoleApp.csprojResolveAssemblyReference.cache
+D:\WebSite\WEB.ConsoleApp\obj\Debug\netcoreapp2.0\WEB.ConsoleApp.csproj.CoreCompileInputs.cache
+D:\WebSite\WEB.ConsoleApp\obj\Debug\netcoreapp2.0\WEB.ConsoleApp.AssemblyInfoInputs.cache
+D:\WebSite\WEB.ConsoleApp\obj\Debug\netcoreapp2.0\WEB.ConsoleApp.AssemblyInfo.cs
+D:\WebSite\WEB.ConsoleApp\obj\Debug\netcoreapp2.0\WEB.ConsoleApp.csproj.CopyComplete
+D:\WebSite\WEB.ConsoleApp\bin\Debug\netcoreapp2.0\WEB.ConsoleApp.pdb
+D:\WebSite\WEB.ConsoleApp\obj\Debug\netcoreapp2.0\WEB.ConsoleApp.dll
+D:\WebSite\WEB.ConsoleApp\obj\Debug\netcoreapp2.0\WEB.ConsoleApp.pdb

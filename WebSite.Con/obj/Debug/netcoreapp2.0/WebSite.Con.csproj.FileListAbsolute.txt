@@ -1,8 +1,0 @@
-D:\WebSite\WebSite.Con\bin\Debug\netcoreapp2.0\WebSite.Con.deps.json
-D:\WebSite\WebSite.Con\bin\Debug\netcoreapp2.0\WebSite.Con.runtimeconfig.json
-D:\WebSite\WebSite.Con\bin\Debug\netcoreapp2.0\WebSite.Con.runtimeconfig.dev.json
-D:\WebSite\WebSite.Con\bin\Debug\netcoreapp2.0\WebSite.Con.dll
-D:\WebSite\WebSite.Con\obj\Debug\netcoreapp2.0\WebSite.Con.csprojResolveAssemblyReference.cache
-D:\WebSite\WebSite.Con\obj\Debug\netcoreapp2.0\WebSite.Con.csproj.CoreCompileInputs.cache
-D:\WebSite\WebSite.Con\obj\Debug\netcoreapp2.0\WebSite.Con.AssemblyInfoInputs.cache
-D:\WebSite\WebSite.Con\obj\Debug\netcoreapp2.0\WebSite.Con.AssemblyInfo.cs
