@@ -24,12 +24,12 @@ namespace WEB.Controllers
             Configuration = config;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
             List<ArtistView> list = new List<ArtistView>();
-            var page = 1;
+            var pageNum = page;
             var count = 24;
-            list = GetNextPage(page, count);
+            list = GetNextPage(pageNum, count);
             return View(list);
         }
 
@@ -44,11 +44,7 @@ namespace WEB.Controllers
         public List<ArtistView> GetNextPage(int page, int count)
         {
             List<ArtistView> list = new List<ArtistView>();
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=" + Configuration["apikey"] + " &page=" + page + "&limit=" + count + "&format=json");
-            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
-            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            Result = Result.Replace("#", "");
-            dynamic ResultJson = JObject.Parse(Result);
+            dynamic ResultJson = GetResponse("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=", page, count);
             foreach (var person in ResultJson.artists.artist)
             {
                 string name = person.name;
@@ -87,11 +83,7 @@ namespace WEB.Controllers
                 Artist art = db.Artists.First(a => a.Name == name);
                 return View(art);
             }
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
-            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
-            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            Result = Result.Replace("#", "");
-            dynamic ResultJson = JObject.Parse(Result);
+            dynamic ResultJson = GetResponse("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=", nameForRequest);
             string bio = ResultJson.artist.bio.content;
             string photo = "";
             foreach (dynamic dyn in ResultJson.artist.image)
@@ -124,11 +116,7 @@ namespace WEB.Controllers
             //    Album alb = db.Albums.FirstOrDefault(a => a.NameAlbum == nameAlbum);
             //    return View(alb);
             //}
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=" + nameArtistForRequest + "&album=" + nameAlbumForRequest + "&api_key=" + Configuration["apikey"] + "&format=json");
-            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
-            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            Result = Result.Replace("#", "");
-            dynamic ResultJson = JObject.Parse(Result);
+            dynamic ResultJson = GetResponse("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=", nameArtistForRequest, nameAlbumForRequest);
             List<Track> tracks = new List<Track>();
             var albumId = Guid.NewGuid();
             foreach (var tr in ResultJson.album.tracks.track)
@@ -201,13 +189,9 @@ namespace WEB.Controllers
         {
             var nameForRequest = IsValidName(name);
             List<Album> topAlbums = new List<Album>();
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=" + count + "&page=" + page + "&format=json");
-            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
-            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            Result = Result.Replace("#", "");
             var nameAlbum = "";
             var cover = "";
-            dynamic ResultJson = JObject.Parse(Result);
+            dynamic ResultJson = GetResponse("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=", nameForRequest, page, count);
             foreach (var tr in ResultJson.topalbums.album)
             {
                 nameAlbum = tr.name;
@@ -251,13 +235,9 @@ namespace WEB.Controllers
         public Album GetOneTopAlbum(string name, int page, int count)
         {
             var nameForRequest = IsValidName(name);
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=" + count + "&page=" + page + "&format=json");
-            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
-            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            Result = Result.Replace("#", "");
+            dynamic ResultJson = GetResponse("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=", nameForRequest, page, count);
             var nameAlbum = "";
             var cover = "";
-            dynamic ResultJson = JObject.Parse(Result);
             nameAlbum = ResultJson.topalbums.album[0].name;
             foreach (dynamic dyn in ResultJson.topalbums.album[0].image)
             {
@@ -285,11 +265,7 @@ namespace WEB.Controllers
         {
             var nameForRequest = IsValidName(name);
             List<Track> topTracks = new List<Track>();
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=" + count + "&page=" + page + "&format=json");
-            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
-            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            Result = Result.Replace("#", "");
-            dynamic ResultJson = JObject.Parse(Result);
+            dynamic ResultJson = GetResponse("http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=", nameForRequest, page, count);
             var nameTrack = "";
             var cover = "";
             foreach (var music in ResultJson.toptracks.track)
@@ -327,11 +303,7 @@ namespace WEB.Controllers
                     return listSimilar;
                 }
             }
-            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create("http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + nameForRequest + "&api_key=" + Configuration["apikey"] + "&limit=12" + "&format=json");
-            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
-            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
-            Result = Result.Replace("#", "");
-            dynamic ResultJson = JObject.Parse(Result);
+            dynamic ResultJson = GetResponse("http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=", nameForRequest, 1, 12);
             string nameSimilar = "";
             string photoSimilar = "";
             foreach (var artist in ResultJson.similarartists.artist)
@@ -358,10 +330,53 @@ namespace WEB.Controllers
             return listSimilar;
         }
 
+
+        public JObject GetResponse(string url, string name, int page, int count)
+        {
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create(url + name + "&api_key=" + Configuration["apikey"] + "&limit=" + count + "&page=" + page + "&format=json");
+            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
+            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+            Result = Result.Replace("#", "");
+            dynamic ResultJson = JObject.Parse(Result);
+            return ResultJson;
+        }
+
+        public JObject GetResponse(string url, string nameArtist, string nameAlbum)
+        {
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create(url + nameArtist + "&album=" + nameAlbum + "&api_key=" + Configuration["apikey"] +  "&format=json");
+            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
+            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+            Result = Result.Replace("#", "");
+            dynamic ResultJson = JObject.Parse(Result);
+            return ResultJson;
+        }
+
+        public JObject GetResponse(string url, string name)
+        {
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create(url + name + "&api_key=" + Configuration["apikey"] + "&format=json");
+            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
+            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+            Result = Result.Replace("#", "");
+            dynamic ResultJson = JObject.Parse(Result);
+            return ResultJson;
+        }
+
+        public JObject GetResponse(string url, int page, int count)
+        {
+            HttpWebRequest tokenRequest = (HttpWebRequest)WebRequest.Create(url + "&limit=" + count + "&page=" + page + "&api_key=" + Configuration["apikey"]  + "&format=json");
+            HttpWebResponse tokenResponse = (HttpWebResponse)tokenRequest.GetResponse();
+            string Result = new StreamReader(tokenResponse.GetResponseStream(), Encoding.UTF8).ReadToEnd();
+            Result = Result.Replace("#", "");
+            dynamic ResultJson = JObject.Parse(Result);
+            return ResultJson;
+        }
+
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 
         }
     }
+
 }

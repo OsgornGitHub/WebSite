@@ -38,7 +38,7 @@ function loadData(data) {
             container.append(markup);
         }
     }
-    window.history.pushState("http://172.19.0.251:45455/", "Index", "http://172.19.0.251:45455/" + pageNum);
+    window.history.pushState("http://172.19.0.251:45455/Home/Index/?page=", "Index", "http://172.19.0.251:45455/Home/Index/?page=" + pageNum);
 }
 
 function getSimilar(name) {
